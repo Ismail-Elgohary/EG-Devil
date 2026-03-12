@@ -11,6 +11,7 @@ export default function Search() {
     e.preventDefault();
     console.log(`${searchtxt}`);
 	router.push(`/Search/SearcResult?query=${searchtxt}`);
+		setSearchtxt("");
   };
   return (
     <>

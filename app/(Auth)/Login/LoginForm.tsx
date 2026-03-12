@@ -1,9 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast }  from "react-toastify";
 export default function LoginForm() {
 
+const router = useRouter();
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 
@@ -16,6 +18,7 @@ const  handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		return;
 	}
    console.log({email, password});
+   router.replace("/");
 };
 
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { IoMenu } from "react-icons/io5";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
-import Search from "../Search/page";
+import Search from "../../Search/page";
 export default function Header() {
   const [open, setOpen] = useState(false);
 

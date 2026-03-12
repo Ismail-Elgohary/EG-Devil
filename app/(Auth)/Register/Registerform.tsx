@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast }  from "react-toastify";
 export default function RegisterForm() {
@@ -7,6 +7,7 @@ export default function RegisterForm() {
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [name, setName] = useState("");
+const router = useRouter();
 
 const  handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 	e.preventDefault();
@@ -16,6 +17,7 @@ const  handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		return;
 	}
    console.log({name, email, password});
+   router.replace("/");
 };
 
 return(

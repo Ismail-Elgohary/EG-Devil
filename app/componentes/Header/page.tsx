@@ -16,7 +16,7 @@ export default function Header() {
     <header
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl
       bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 z-50"
-    >
+	  >
       <div className="px-6 py-3 flex items-center gap-4">
         {/* Logo */}
         <Link href="/">

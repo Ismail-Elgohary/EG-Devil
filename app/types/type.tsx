@@ -16,4 +16,20 @@ type Tslider = {
   bgColor: string;
 };
 
-export type { Tpost, Tslider};
+
+interface AddProducts {
+    name: string;
+    description: string;
+    price: number;
+    discount_price?: number | null;
+    category: string;
+    subcategory?: string;
+    brand?: string;
+    sku?: string;
+    stock?: number;
+    images?: string[];
+    colors?: string[];
+    sizes?: string[];
+    tags?: string[];
+}
+export type { Tpost, Tslider, AddProducts};

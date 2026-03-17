@@ -24,4 +24,16 @@ interface AddProducts {
     category: string;
     images?: string[];
 }
-export type { Tpost, Tslider, AddProducts};
+
+
+
+interface updateProducts {
+    name?: string;
+    description?: string;
+    price?: number;
+    category?: string;
+    images?: string[];
+}
+
+
+export type { Tpost, Tslider, AddProducts, updateProducts};

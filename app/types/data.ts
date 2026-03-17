@@ -1,7 +1,7 @@
 import { Tpost } from "./type";
 export const data: Tpost[] = [
   {
-    "id": "prod001",
+    "id": 1,
     "name": "Classic White T-Shirt",
     "description": "A comfortable everyday white t-shirt made from 100% cotton.",
     "price": 19.99,
@@ -12,7 +12,7 @@ export const data: Tpost[] = [
     ],
   },
   {
-    "id": "prod002",
+    "id": 2,
    "name": "Slim Fit Jeans",
     "description": "Modern slim fit jeans with a comfortable stretch fabric.",
     "price": 59.99,

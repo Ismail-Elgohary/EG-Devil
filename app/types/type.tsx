@@ -15,25 +15,4 @@ type Tslider = {
   image: string;
   bgColor: string;
 };
-
-
-interface AddProducts {
-    name: string;
-    description: string;
-    price: number;
-    category: string;
-    images?: string[];
-}
-
-
-
-interface updateProducts {
-    name?: string;
-    description?: string;
-    price?: number;
-    category?: string;
-    images?: string[];
-}
-
-
-export type { Tpost, Tslider, AddProducts, updateProducts};
+export type { Tpost, Tslider};

@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/componentes/Header/page";
 import Footer from "@/app/componentes/Footer/page";
- import { ToastContainer} from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
+import CartProvider from "./context/Cartshop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,12 +30,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+		<CartProvider>
         <Header />
 		<ToastContainer />
 		<main className="mt-20 container mx-auto px-4 py-4">
         {children}
 		</main>
 		<Footer />
+		</CartProvider>
       </body>
     </html>
   );

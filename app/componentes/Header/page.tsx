@@ -4,6 +4,8 @@ import { IoMenu } from "react-icons/io5";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
 import Search from "../../Search/page";
+import Icons from "./icons";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -16,7 +18,7 @@ export default function Header() {
     <header
       className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl
       bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 z-50"
-	  >
+    >
       <div className="px-6 py-3 flex items-center gap-4">
         {/* Logo */}
         <Link href="/">
@@ -42,8 +44,8 @@ export default function Header() {
         {/* Right Side (Desktop) */}
         <div className="hidden md:flex items-center gap-4 ml-auto">
           <Search />
-
           <div className="w-px h-5 bg-gray-200" />
+          <Icons />
 
           <Link
             href="/Register"

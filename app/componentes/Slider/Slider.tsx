@@ -43,12 +43,10 @@ export default function HeroSlider() {
       <div className="relative overflow-hidden rounded-2xl shadow-2xl"
         style={{ background: "linear-gradient(135deg, #eef2ff 0%, #e0e7ff 50%, #f5f3ff 100%)" }}
       >
-        {/* Decorative blobs */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-300/30 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-violet-300/30 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3" />
 
-        {/* Slides */}
-        <div
+         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
@@ -57,7 +55,6 @@ export default function HeroSlider() {
               key={post.id}
               className="min-w-full md:h-[450px] h-[350px] relative flex items-center justify-between px-8 md:px-20 shrink-0"
             >
-              {/* Left Content */}
               <div className="relative z-20 flex flex-col gap-5 max-w-sm">
                 <span className="text-indigo-500 text-xs font-bold tracking-[0.2em] uppercase bg-indigo-100 px-3 py-1 rounded-full w-fit">
                   Featured Product
@@ -91,7 +88,6 @@ export default function HeroSlider() {
                 </Link>
               </div>
 
-              {/* Right Image */}
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] h-full hidden md:flex items-center justify-center pointer-events-none">
                 <div className="absolute w-[300px] h-[300px] bg-indigo-400/20 rounded-full blur-[60px]" />
                 <img
@@ -105,7 +101,6 @@ export default function HeroSlider() {
           ))}
         </div>
 
-        {/* Arrows */}
         <button onClick={prev}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-30
             w-10 h-10 bg-white/70 hover:bg-white backdrop-blur-sm
@@ -123,7 +118,6 @@ export default function HeroSlider() {
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
 
-        {/* Dots */}
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-30">
           {slides.map((_: Tpost, index: number) => (
             <button
@@ -138,13 +132,6 @@ export default function HeroSlider() {
           ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes imgPop {
-          from { opacity: 0; transform: scale(0.85) translateX(30px); }
-          to   { opacity: 1; transform: scale(1) translateX(0); }
-        }
-      `}</style>
     </section>
   );
 }

@@ -12,15 +12,16 @@ export default async function Products() {
   const posts: Tpost[] = await res.json();
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen p-4">
       <h1 className="text-3xl font-bold mb-6 text-center text-blue-700">
         Products
       </h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8">
         {posts.map((post, index) => (
           <ProductCard key={post.id} post={post} index={index} />
         ))}
       </div>
+
       <style>{`
         @keyframes fadeSlideUp {
           from { opacity: 0; transform: translateY(30px); }

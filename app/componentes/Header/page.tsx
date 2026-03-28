@@ -3,37 +3,34 @@ import Link from "next/link";
 import { IoMenu } from "react-icons/io5";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
-import Search from "../../Search/page";
 import Icons from "./icons";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { name: "Contact", href: "/contact" },
-    { name: "Products", href: "/products" },
+	{ name: "Home", href: "/" },
+	{ name: "Products", href: "/products" },
+	{ name: "About", href: "/about" } ,
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
-    <header
-      className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl
-      bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 z-50"
-    >
+    <header className="fixed top-0 left-0 w-full z-50 shadow-sm font-bold bg-[#1A1A1A]">
       <div className="px-6 py-3 flex items-center gap-4">
-        {/* Logo */}
+
         <Link href="/">
-          <span className="text-xl font-extrabold text-yellow-500 shrink-0">
+          <span className="text-xl font-extrabold text-yellow-500 shrink-2">
             EG-Devil
           </span>
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-7 flex-1 justify-center">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-gray-600 hover:text-indigo-600 text-sm font-medium relative group"
+              className="text-white shrink-0 hover:text-indigo-600 text-lg font-bold relative group"
             >
               {link.name}
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-indigo-600 transition-all group-hover:w-full" />
@@ -41,22 +38,11 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Right Side (Desktop) */}
         <div className="hidden md:flex items-center gap-4 ml-auto">
-          <Search />
           <div className="w-px h-5 bg-gray-200" />
           <Icons />
-
-          <Link
-            href="/Register"
-            className="px-4 py-1.5 text-sm font-semibold text-white bg-indigo-600 rounded-lg
-            hover:bg-indigo-700 shadow-sm shadow-indigo-200 active:scale-95 transition-all duration-200"
-          >
-            Register
-          </Link>
         </div>
 
-        {/* Hamburger (Mobile) */}
         <div className="md:hidden flex items-center ml-auto gap-2">
           <button className="p-1" onClick={() => setOpen(!open)}>
             {open ? (
@@ -68,7 +54,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div className="md:hidden border-t border-gray-100 px-6 py-4 flex flex-col gap-3 bg-white/95 backdrop-blur-md rounded-b-2xl shadow-lg">
           {navLinks.map((link) => (
@@ -89,6 +74,7 @@ export default function Header() {
           </Link>
         </div>
       )}
+
     </header>
   );
 }

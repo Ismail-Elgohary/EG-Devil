@@ -5,6 +5,7 @@ import Header from "@/app/componentes/Header/page";
 import Footer from "@/app/componentes/Footer/page";
 import { ToastContainer} from 'react-toastify';
 import CartProvider from "./context/Cartshop";
+import HeartProvider from "./context/FavoritesContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+		<HeartProvider>
 		<CartProvider>
         <Header />
 		<ToastContainer />
@@ -38,6 +40,7 @@ export default function RootLayout({
 		</main>
 		<Footer />
 		</CartProvider>
+		</HeartProvider>
       </body>
     </html>
   );

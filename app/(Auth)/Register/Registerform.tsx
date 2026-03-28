@@ -22,11 +22,8 @@ const  handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
 return(
 <>
-        {/* Form */}
         <form onSubmit={handelSubmit} className="flex flex-col gap-5">
 
-
-          {/* Name */}
           <div className="flex flex-col gap-1.5">
             <label htmlFor="email" className="text-sm font-semibold text-slate-700">
              Full Name
@@ -43,8 +40,6 @@ return(
             />
           </div>
 
-
-          {/* Email */}
           <div className="flex flex-col gap-1.5">
             <label htmlFor="email" className="text-sm font-semibold text-slate-700">
               Email
@@ -60,8 +55,6 @@ return(
 			  text-slate-700 placeholder:text-slate-300 transition-all duration-200"
             />
           </div>
-
-          {/* Password */}
           <div className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between">
               <label htmlFor="password" className="text-sm font-semibold text-slate-700">
@@ -83,7 +76,6 @@ return(
             />
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             className="mt-2 w-full bg-indigo-600 hover:bg-indigo-700 active:scale-95
@@ -94,14 +86,12 @@ return(
             continue
           </button>
 
-          {/* Divider */}
           <div className="flex items-center gap-3">
             <div className="flex-1 h-px bg-slate-200" />
             <span className="text-xs text-slate-400">or</span>
             <div className="flex-1 h-px bg-slate-200" />
           </div>
 
-          {/* Register link */}
           <p className="text-center text-sm text-slate-500">
             Don't have an account?{" "}
             <a href="/Login" className="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">

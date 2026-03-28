@@ -8,12 +8,10 @@ export default function Login() {
           "linear-gradient(135deg, #eef2ff 0%, #e0e7ff 50%, #f5f3ff 100%)",
       }}
     >
-      {/* Decorative blobs */}
       <div className="fixed top-0 left-0 w-72 h-72 bg-indigo-300/30 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="fixed bottom-0 right-0 w-96 h-96 bg-violet-300/30 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
       <div className="relative z-10 bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl shadow-indigo-100 p-10 w-full max-w-md mx-4">
-        {/* Header */}
         <div className="mb-8">
           <span className="text-indigo-500 text-xs font-bold tracking-[0.2em] uppercase bg-indigo-100 px-3 py-1 rounded-full">
             Welcome Register page

@@ -20,7 +20,7 @@ export default function Header() {
       <div className="px-6 py-3 flex items-center gap-4">
 
         <Link href="/">
-          <span className="text-xl font-extrabold text-yellow-500 shrink-2">
+          <span className="text-xl font-extrabold text-indigo-400 shrink-2">
             EG-Devil
           </span>
         </Link>

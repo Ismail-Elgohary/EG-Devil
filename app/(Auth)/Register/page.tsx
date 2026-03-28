@@ -2,7 +2,7 @@ import RegisterForm from "./Registerform";
 export default function Login() {
   return (
     <section
-      className="min-h-screen flex items-center justify-center"
+      className="min-h-screen flex items-center justify-center mt-10"
       style={{
         background:
           "linear-gradient(135deg, #eef2ff 0%, #e0e7ff 50%, #f5f3ff 100%)",

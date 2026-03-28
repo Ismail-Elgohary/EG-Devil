@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import { ShoppingCart, Heart, UserRound  } from "lucide-react";
-import { useCart } from "../../context/Cartshop";
-import { useHeart } from "../../context/FavoritesContext";
+import { useCart } from "../../(base)/context/Cartshop";
+import { useHeart } from "../../(base)/context/FavoritesContext";
 export default function Icons() {
   const { cartCount } = useCart();
   const { favourites } = useHeart();
@@ -32,7 +32,7 @@ export default function Icons() {
         </div>
       </Link>
 
-      <Link href="/Register" className="relative text-white gap-2 px-3 py-2 rounded-lg  transition group">
+      <Link href="/Login" className="relative text-white gap-2 px-3 py-2 rounded-lg  transition group">
           <UserRound className="relative group-hover:text-blue-500 transition" />
          </Link>
 

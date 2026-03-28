@@ -19,7 +19,7 @@ const HomePage = () => {
   const isFavorite = (id: number) => favourites?.some((item: any) => item.id === id);
 
   return (
-    <div className="min-h-screen bg-white" dir="rtl">
+    <div className="mt-20 container mx-auto px-4 py-4 min-h-screen bg-white" dir="rtl">
 
       <section className="relative bg-gray-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-40">

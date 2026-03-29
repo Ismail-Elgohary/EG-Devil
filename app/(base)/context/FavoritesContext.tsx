@@ -1,5 +1,5 @@
 "use client";
-import { Tpost } from "../types/type";
+import { Tpost } from "../../types/type";
 import { createContext, useContext, useState, useEffect } from "react";
 
 interface HeartContextType {

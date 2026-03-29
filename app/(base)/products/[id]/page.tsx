@@ -19,7 +19,7 @@ export default async function Product({ params }: Props) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6">
       <div
-        className="bg-white rounded-3xl shadow-2xl overflow-hidden max-w-4xl w-full flex flex-col md:flex-row"
+        className="bg-white rounded-4xl shadow-2xl overflow-hidden max-w-5xl w-full flex flex-col md:flex-row"
         style={{
           animation: "fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
         }}
@@ -29,11 +29,11 @@ export default async function Product({ params }: Props) {
           style={{ minHeight: "360px" }}
         >
 
-          <div className="absolute -top-10 -left-10 w-48 h-48 bg-indigo-100 rounded-full opacity-50" />
+          <div className="absolute -top-10 -left-10 w-50 h-50 bg-indigo-100 rounded-full opacity-50" />
           <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-pink-100 rounded-full opacity-40" />
 
           <img
-            className="relative z-10 w-full max-h-72 object-contain drop-shadow-2xl"
+            className="relative z-10 w-full object-contain drop-shadow-2xl"
             src={post.image}
             alt={post.name}
             style={{

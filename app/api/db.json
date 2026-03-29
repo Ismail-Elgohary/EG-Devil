@@ -2,11 +2,11 @@
   "products": [
     {
       "id": "1",
-      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-      "price": 10.99,
-      "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
+      "title": "Men's T-Shirt",
+      "price": 100.99,
+      "description": "Under Armour Men's Tech 2.0 Short-Sleeve T-Shirt",
+      "category": "t-shirt",
+      "image": "https://m.media-amazon.com/images/I/81cX5SrwD8L._AC_UL480_QL65_.jpg",
       "rating": {
         "rate": 1.9,
         "count": 100
@@ -14,11 +14,11 @@
     },
     {
       "id": "2",
-      "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-      "price": 109,
-      "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-      "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
+      "title": "Men's Hoodie",
+      "price": 2100,
+      "description": "Nike Boy's NSW Pull Over Hoodie Club",
+      "category": "Hodies",
+      "image": "https://m.media-amazon.com/images/I/71zdwdDgt-L._AC_UL480_QL65_.jpg",
       "rating": {
         "rate": 2.9,
         "count": 470
@@ -26,11 +26,11 @@
     },
     {
       "id": "3",
-      "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-      "price": 109,
-      "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-      "category": "electronics",
-      "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+      "title": "Men's Hoodie",
+      "price": 1700,
+      "description": "SOLY HUX Boy's Zip Up Hoodies Sweatshirt Y2k Letter Graphic Long Sleeve Streetwear Jacket",
+      "category": "Hody",
+      "image": "https://m.media-amazon.com/images/I/61291tTiTpL._AC_SY500_.jpg",
       "rating": {
         "rate": 4.8,
         "count": 319
@@ -38,11 +38,11 @@
     },
     {
       "id": "4",
-      "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-      "price": 114,
-      "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-      "category": "electronics",
-      "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
+      "title": "Men's Hoodie",
+      "price": 1317,
+      "description": "wangstar Graphic Hoodies for Boys Sweatshirts Baseball Gifts for Teen Boys Fashion Hoodies Size 14-16 Cool Football Stuff",
+      "category": "hody ",
+      "image": "https://m.media-amazon.com/images/I/61qRavw1nDL._AC_SY500_.jpg",
       "rating": {
         "rate": 4.8,
         "count": 400
@@ -50,11 +50,11 @@
     },
     {
       "id": "5",
-      "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-      "price": 599,
-      "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-      "category": "electronics",
-      "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+      "title": "Men's Hoodie",
+      "price": 1299,
+      "description": "wangstar Graphic Hoodies for Boys Sweatshirts Baseball Gifts for Teen Boys Fashion Hoodies Size 14-16 Cool Football Stuff",
+      "category": "hody",
+      "image": "https://m.media-amazon.com/images/I/61zDhh8th3L._AC_SY500_.jpg",
       "rating": {
         "rate": 2.9,
         "count": 250
@@ -62,11 +62,11 @@
     },
     {
       "id": "6",
-      "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-      "price": 999.99,
-      "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-      "category": "electronics",
-      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
+      "title": "Men,s jacket",
+      "price": 1700,
+      "description": "TACVASEN Men's Bomber Jacket Lightweight Casual Spring Fall Windbreaker Zip Up Coat with Pocket",
+      "category": "jacket",
+      "image": "https://m.media-amazon.com/images/I/71rNJdgvB1L._AC_SX569_.jpg",
       "rating": {
         "rate": 2.2,
         "count": 140
@@ -124,41 +124,41 @@
       "id": "11",
       "title": "Gaming Laptop",
       "price": 1500,
-      "category": "electronics",
-      "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302",
-      "description": "High performance gaming laptop with powerful GPU."
+      "category": "jacket",
+      "image": "https://m.media-amazon.com/images/I/71kiKJpww7L._AC_UL480_QL65_.jpg",
+      "description": "Legendary Whitetails Mens Flannel Lined Shirt Jacket Waxed Cotton Water Resistant Shacket "
     },
     {
       "id": "22",
-      "title": "Wireless Mouse",
-      "price": 40,
-      "category": "electronics",
-      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3",
-      "description": "Ergonomic wireless mouse with long battery life."
+      "title": "mens",
+      "price": 700,
+      "category": "mens",
+      "image": "https://m.media-amazon.com/images/I/81zin9FjtoL._AC_UL480_FMwebp_QL65_.jpg",
+      "description": "Camo Hoodie for Men Women Oversized Fleece Maple Leaf Hooded Sweatshirt Graphic Print Pullover Hoodies with Pocket "
     },
     {
       "id": "23",
-      "title": "Mechanical Keyboard",
-      "price": 120,
-      "category": "electronics",
-      "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef",
-      "description": "RGB mechanical keyboard for gaming and typing."
+      "title": "mens",
+      "price": 800,
+      "category": "wide-leg",
+      "image": "https://m.media-amazon.com/images/I/61jjuJWI2JL._AC_UL480_QL65_.jpg",
+      "description": "Men's Baggy Sweatpants Fleece Wide Leg Lounge Pants Drawstring Waist Loose Fit Cotton Jogging Sweat Pants with Pockets"
     },
     {
       "id": "24",
-      "title": "Smart Watch",
+      "title": "mens",
       "price": 250,
-      "category": "electronics",
-      "image": "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b",
-      "description": "Fitness tracking smartwatch with heart rate monitor."
+      "category": "mens",
+      "image": "https://m.media-amazon.com/images/I/61GtbiQL9YL._AC_UL480_FMwebp_QL65_.jpg",
+      "description": "BANGELY Faith Over Fear Hoodie Women Christian Sweatshirt Graphic Christian Religious Sayings Sweater Bible Pullover Tops"
     },
     {
       "id": "25",
-      "title": "Bluetooth Speaker",
+      "title": "mens teshirt",
       "price": 80,
-      "category": "electronics",
-      "image": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad",
-      "description": "Portable bluetooth speaker with deep bass."
+      "category": "t-shirt",
+      "image": "https://m.media-amazon.com/images/I/71xP35notIL._AC_UL480_FMwebp_QL65_.jpg",
+      "description": "UOUA Mens Graphic Tees Vintage Oversized T-Shirts Casual Acid Wash Cotton Streetwear "
     },
     {
       "id": "26",
@@ -170,11 +170,11 @@
     },
     {
       "id": "27",
-      "title": "Running Shoes",
+      "title": "hody",
       "price": 95,
-      "category": "shoes",
-      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-      "description": "Lightweight running shoes for everyday training."
+      "category": "hody",
+      "image": "https://m.media-amazon.com/images/I/71MmxGyNaDL._AC_UL480_QL65_.jpg",
+      "description": "SOLY HUX Women's Hoodies Leopard Graphic Drop Shoulder Long Sleeve Hooded Preppy Sweatshirts Streetwear"
     },
     {
       "id": "28",
@@ -186,20 +186,83 @@
     },
     {
       "id": "29",
-      "title": "Desk Lamp",
-      "price": 45,
-      "category": "home",
-      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c",
-      "description": "Modern desk lamp with adjustable brightness."
+      "title": "shirt",
+      "price": 100,
+      "category": "t-shirt",
+      "image": "https://m.media-amazon.com/images/I/71IUMJCF66L._AC_SY500_.jpg",
+      "description": "SOLY HUX Mens Jersey Y2k Baggy Shirts Graphic Tees Oversized V Neck Tshirts Summer Tops"
     },
     {
       "id": "30",
-      "title": "Office Chair",
-      "price": 220,
-      "category": "home",
-      "image": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8",
-      "description": "Ergonomic office chair for long working hours."
-    }
+      "title": "jacket",
+      "price": 700,
+      "category": "jacket",
+      "image": "https://m.media-amazon.com/images/I/71FJfiEfe9L._AC_UL480_QL65_.jpg",
+      "description": "SOLY HUX Men's Graphic Zip Up Hoodies Streetwear Jacket Letter Print Long Sleeve Sweatshirt with Pocket"
+    },
+
+ {
+  "id": "31",
+  "title": "جاكيت جلد",
+  "price": 1000,
+  "category": "clothes",
+  "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",
+  "description": "jacket"
+},
+
+ {
+  "id": "32",
+  "title": "جاكيت جينز",
+  "price": 1500,
+  "category": "mens",
+  "image": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?q=80&w=669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "description": "A clean, modern outfit designed for comfort and everyday style. Perfect for a casual yet trendy look"
+},
+
+ {
+  "id": "33",
+  "title": "",
+  "price": 500,
+  "category": "mens",
+  "image": "https://images.unsplash.com/photo-1740711152088-88a009e877bb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
+  "description": "Men's Casual Linen Shirt_by LINENESE"
+},
+
+ {
+  "id": "34",
+  "title": "",
+  "price": 900,
+  "category": "mens",
+  "image": "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?q=80&w=692&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "description": "A clean, modern outfit designed for comfort and everyday style. Perfect for a casual yet trendy look"
+},
+
+ {
+  "id": "35",
+  "title": "",
+  "price": 900,
+  "category": "mens",
+  "image": "https://images.unsplash.com/photo-1687275160744-ef140bf5529c?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "description": "A clean, modern outfit designed for comfort and everyday style. Perfect for a casual yet trendy look"
+},
+
+ {
+  "id": "36",
+  "title": "",
+  "price": 350,
+  "category": "mens",
+  "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dCUyMHNoaXJ0fGVufDB8fDB8fHww",
+  "description": "t-shirt"
+},
+
+ {
+  "id": "37",
+  "title": "",
+  "price": 500,
+  "category": "mens",
+  "image": "https://images.unsplash.com/photo-1618354691551-44de113f0164?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "description": "Plain Long Sleeve T Shirt great for product mockup photos"
+}
 
   ]
 }

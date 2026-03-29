@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ShoppingCart, Heart } from "lucide-react";
 import { useCart } from "../context/Cartshop";
 import { useHeart } from "../context/FavoritesContext";
-import { Tpost } from "../types/type";
+import { Tpost } from "../../types/type";
 
 export default function ProductCard({
 	post,

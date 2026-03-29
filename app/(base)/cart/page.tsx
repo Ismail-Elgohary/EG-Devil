@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ChevronLeft, ChevronRight, X, Tag, MapPin, Plus } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Trash2, Tag, MapPin, Plus } from "lucide-react";
 import { useCart } from "../context/Cartshop";
 
 const TAX_RATE = 0.02;
@@ -17,7 +17,7 @@ export default function CartPage() {
 
   const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const tax  = subtotal * TAX_RATE;
+  const tax = subtotal * TAX_RATE;
   const total = subtotal + tax;
 
   const increase = (id: number, currentQty: number): void =>
@@ -44,7 +44,6 @@ export default function CartPage() {
         <section className="lg:col-span-2">
 
           {cart.length === 0 ? (
-
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center py-24 gap-5">
               <div className="w-20 h-20 rounded-full bg-orange-50 flex items-center justify-center">
                 <Tag size={36} className="text-orange-300" />
@@ -53,16 +52,12 @@ export default function CartPage() {
                 <p className="text-xl font-bold text-gray-700">Your cart is empty</p>
                 <p className="text-sm text-gray-400 mt-1">Add some products to get started!</p>
               </div>
-              <Link
-                href="/products"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700"
-              >
+              <Link href="/products" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700">
                 Browse Products
               </Link>
             </div>
 
           ) : (
-
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
 
               <div className="grid grid-cols-[2fr_1fr_1fr_1fr] px-6 py-4 border-b border-gray-100 text-xs font-semibold text-gray-400 uppercase tracking-wider">
@@ -72,62 +67,64 @@ export default function CartPage() {
                 <span className="text-center">Subtotal</span>
               </div>
 
+              {/* Rows */}
               {cart.map((item) => (
                 <div
                   key={item.id}
-                  className="grid grid-cols-[2fr_1fr_1fr_1fr] items-center px-6 py-5 border-b border-gray-50 hover:bg-gray-50/60 transition-colors"
+                  className="grid grid-cols-[2fr_1fr_1fr_1fr] items-center px-6 py-6 border-b border-gray-50 hover:bg-gray-50/60 transition-colors"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden shrink-0">
+                  <div className="flex items-center gap-5">
+                    <div className="w-32 h-32 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden shrink-0">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-contain p-2"
+                        className="w-full h-full object-contain p-3 hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <div>
+                    <div className="flex flex-col gap-2">
                       <p className="text-sm font-semibold text-gray-800 leading-snug line-clamp-2">
                         {item.name}
                       </p>
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="mt-1.5 text-xs font-semibold text-orange-500 hover:text-orange-600 transition-colors flex items-center gap-1"
+                        className="flex items-center gap-1.5 text-sm font-bold text-red-500 hover:text-red-600 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition-all w-fit"
                       >
-                        <X size={11} />
+                        <Trash2 size={14} />
                         Remove
                       </button>
                     </div>
                   </div>
 
-                  <p className="text-center text-sm font-semibold text-gray-700">
+                  <p className="text-center text-base font-extrabold text-gray-800">
                     ${item.price.toFixed(2)}
                   </p>
 
-                  <div className="flex items-center justify-center gap-3">
+                  <div className="flex items-center justify-center gap-2">
                     <button
                       onClick={() => decrease(item.id, item.quantity)}
-                      className="w-7 h-7 rounded-full border border-gray-200 bg-white hover:border-orange-400 hover:text-orange-500 flex items-center justify-center transition-colors"
+                      className="w-8 h-8 rounded-full border border-gray-200 bg-white hover:border-orange-400 hover:text-orange-500 flex items-center justify-center transition-colors"
                     >
-                      <ChevronLeft size={14} />
+                      <ChevronLeft size={15} />
                     </button>
-                    <span className="w-5 text-center text-sm font-bold text-gray-800">
+                    <span className="w-6 text-center text-base font-bold text-gray-800">
                       {item.quantity}
                     </span>
                     <button
                       onClick={() => increase(item.id, item.quantity)}
-                      className="w-7 h-7 rounded-full border border-gray-200 bg-white hover:border-orange-400 hover:text-orange-500 flex items-center justify-center transition-colors"
+                      className="w-8 h-8 rounded-full border border-gray-200 bg-white hover:border-orange-400 hover:text-orange-500 flex items-center justify-center transition-colors"
                     >
-                      <ChevronRight size={14} />
+                      <ChevronRight size={15} />
                     </button>
                   </div>
 
-                  <p className="text-center text-sm font-bold text-gray-900">
+                  {/* Subtotal */}
+                  <p className="text-center text-base font-bold text-gray-900">
                     ${(item.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
               ))}
 
-              <div className="px-6 py-4">
+              <div className="px-6 py-5">
                 <Link
                   href="/products"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
@@ -150,7 +147,6 @@ export default function CartPage() {
                 <MapPin size={12} className="text-orange-400" />
                 Select Address
               </label>
-
               <select
                 value={selectedAddress}
                 onChange={(e) => setSelectedAddress(e.target.value)}
@@ -160,7 +156,6 @@ export default function CartPage() {
                 <option value="home">🏠 Home Address</option>
                 <option value="work">🏢 Work Address</option>
               </select>
-
               <button
                 onClick={() => setShowAddAddress(!showAddAddress)}
                 className="w-full py-2.5 border border-dashed border-gray-300 rounded-xl text-sm font-semibold text-gray-500 hover:border-orange-400 hover:text-orange-500 transition-colors flex items-center justify-center gap-1.5"
@@ -168,7 +163,6 @@ export default function CartPage() {
                 <Plus size={14} />
                 Add New Address
               </button>
-
               {showAddAddress && (
                 <input
                   type="text"

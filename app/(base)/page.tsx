@@ -2,7 +2,7 @@
 import { ArrowRight, Truck, ShieldCheck, Zap} from 'lucide-react';
 import Link from "next/link";
 import BestProducts from './Home/Bestproducts';
-import MensPage from './mens/page';
+import MensPage from './Home/mens';
 
 const HomePage = () => {
   return (

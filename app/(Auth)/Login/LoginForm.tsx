@@ -1,5 +1,4 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast }  from "react-toastify";
@@ -47,7 +46,7 @@ return(
               <label htmlFor="password" className="text-sm font-semibold text-slate-700">
                 Password
               </label>
-              <a href="#" className="text-xs text-indigo-500 hover:text-indigo-700 transition-colors">
+              <a href="./forgetPass" className="text-xs text-indigo-500 hover:text-indigo-700 transition-colors">
                 Forgot password?
               </a>
             </div>

@@ -40,10 +40,10 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-4 ml-auto">
           <div className="w-px h-5 bg-gray-200" />
+          <Icons />
         </div>
 
         <div className="md:hidden flex items-center ml-auto gap-2">
-			<Icons />
           <button className="p-1" onClick={() => setOpen(!open)}>
             {open ? (
               <MdClose className="w-6 h-6 text-gray-700" />

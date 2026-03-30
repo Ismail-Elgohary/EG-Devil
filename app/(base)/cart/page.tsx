@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ChevronLeft, ChevronRight, Trash2, Tag, MapPin, Plus } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Trash2, Tag, MapPin, Plus, ShoppingBag } from "lucide-react";
 import { useCart } from "../context/Cartshop";
 
 const TAX_RATE = 0.02;
@@ -31,217 +31,209 @@ export default function CartPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div className="min-h-screen bg-gray-50">
 
-      <header className="border-b border-gray-200 px-4 md:px-8 py-5 flex items-center justify-between">
-        <h1 className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">
-          Your <span className="text-orange-500">Cart</span>
+      {/* Header */}
+      <header className="bg-white border-b border-gray-100 px-4 md:px-8 py-4 flex items-center justify-between sticky top-0 z-10">
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900">
+          Your <span className="text-blue-600">Cart</span>
         </h1>
-        <span className="text-sm text-gray-400 font-medium">{itemCount} Items</span>
+        <span className="bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1 rounded-full">
+          {itemCount} Items
+        </span>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8 flex flex-col lg:grid lg:grid-cols-3 gap-6 items-start">
+      <main className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8">
 
-        <section className="w-full lg:col-span-2">
-
-          {cart.length === 0 ? (
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center py-24 gap-5">
-              <div className="w-20 h-20 rounded-full bg-orange-50 flex items-center justify-center">
-                <Tag size={36} className="text-orange-300" />
-              </div>
-              <div className="text-center">
-                <p className="text-xl font-bold text-gray-700">Your cart is empty</p>
-                <p className="text-sm text-gray-400 mt-1">Add some products to get started!</p>
-              </div>
-              <Link href="/products" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700">
-                Browse Products
-              </Link>
+        {cart.length === 0 ? (
+          /* Empty State */
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center py-32 gap-5">
+            <div className="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center">
+              <ShoppingBag size={36} className="text-blue-300" />
             </div>
+            <div className="text-center">
+              <p className="text-xl font-bold text-gray-700">Your cart is empty</p>
+              <p className="text-sm text-gray-400 mt-1">Add some products to get started!</p>
+            </div>
+            <Link href="/products" className="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors">
+              Browse Products
+            </Link>
+          </div>
 
-          ) : (
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        ) : (
+          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-6 items-start">
 
-              <div className="hidden md:grid grid-cols-[2fr_1fr_1fr_1fr] px-6 py-4 border-b border-gray-100 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                <span>Product Details</span>
-                <span className="text-center">Price</span>
-                <span className="text-center">Quantity</span>
-                <span className="text-center">Subtotal</span>
-              </div>
+            {/* ── Left: Items ── */}
+            <div className="w-full lg:col-span-2 flex flex-col gap-3">
 
               {cart.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col md:grid md:grid-cols-[2fr_1fr_1fr_1fr] items-start md:items-center px-4 md:px-6 py-5 border-b border-gray-50 hover:bg-gray-50/60 transition-colors gap-4 md:gap-0"
+                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 flex flex-col sm:flex-row gap-4"
                 >
-                  {/* Product Info */}
-                  <div className="flex items-center gap-4 w-full">
-                    <div className="w-20 h-20 md:w-28 md:h-28 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden shrink-0">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full h-full object-contain p-2 hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2 flex-1">
-                      <p className="text-sm font-semibold text-gray-800 leading-snug line-clamp-2">
+                  {/* Image */}
+                  <div className="w-full sm:w-28 h-32 sm:h-28 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden shrink-0">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <div className="flex-1 flex flex-col gap-3">
+                    <div className="flex items-start justify-between gap-2">
+                      <p className="text-sm font-semibold text-gray-800 leading-snug line-clamp-2 flex-1">
                         {item.name}
                       </p>
-                      {/* Mobile: price + qty + subtotal */}
-                      <div className="flex items-center gap-3 md:hidden text-sm text-gray-500">
-                        <span className="font-bold text-gray-800">${item.price.toFixed(2)}</span>
-                        <span>×</span>
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={() => decrease(item.id, item.quantity)}
-                            className="w-6 h-6 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600"
-                          >
-                            <ChevronLeft size={12} />
-                          </button>
-                          <span className="font-bold">{item.quantity}</span>
-                          <button
-                            onClick={() => increase(item.id, item.quantity)}
-                            className="w-6 h-6 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-600"
-                          >
-                            <ChevronRight size={12} />
-                          </button>
-                        </div>
-                        <span className="font-black text-orange-500">
-                          = ${(item.price * item.quantity).toFixed(2)}
-                        </span>
-                      </div>
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="flex items-center gap-1.5 text-xs font-bold text-red-500 hover:text-red-600 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition-all w-fit"
+                        className="p-1.5 rounded-lg text-red-400 hover:bg-red-50 hover:text-red-500 transition-colors shrink-0"
                       >
-                        <Trash2 size={12} />
-                        Remove
+                        <Trash2 size={15} />
                       </button>
                     </div>
+
+                    {/* Price + Qty + Subtotal */}
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+
+                      {/* Unit Price */}
+                      <div className="flex flex-col">
+                        <span className="text-[10px] text-gray-400 uppercase tracking-wider">Unit Price</span>
+                        <span className="text-sm font-bold text-gray-700">${item.price.toFixed(2)}</span>
+                      </div>
+
+                      {/* Quantity Controls */}
+                      <div className="flex items-center gap-2 bg-gray-50 rounded-xl px-3 py-1.5">
+                        <button
+                          onClick={() => decrease(item.id, item.quantity)}
+                          className="w-6 h-6 rounded-full border border-gray-200 bg-white hover:border-blue-400 hover:text-blue-500 flex items-center justify-center transition-colors"
+                        >
+                          <ChevronLeft size={13} />
+                        </button>
+                        <span className="w-6 text-center text-sm font-bold text-gray-800">
+                          {item.quantity}
+                        </span>
+                        <button
+                          onClick={() => increase(item.id, item.quantity)}
+                          className="w-6 h-6 rounded-full border border-gray-200 bg-white hover:border-blue-400 hover:text-blue-500 flex items-center justify-center transition-colors"
+                        >
+                          <ChevronRight size={13} />
+                        </button>
+                      </div>
+
+                      {/* Subtotal */}
+                      <div className="flex flex-col items-end">
+                        <span className="text-[10px] text-gray-400 uppercase tracking-wider">Subtotal</span>
+                        <span className="text-base font-black text-blue-600">
+                          ${(item.price * item.quantity).toFixed(2)}
+                        </span>
+                      </div>
+
+                    </div>
                   </div>
-
-                  <p className="hidden md:block text-center text-base font-extrabold text-gray-800">
-                    ${item.price.toFixed(2)}
-                  </p>
-
-                  <div className="hidden md:flex items-center justify-center gap-2">
-                    <button
-                      onClick={() => decrease(item.id, item.quantity)}
-                      className="w-8 h-8 rounded-full border border-gray-200 bg-white hover:border-orange-400 hover:text-orange-500 flex items-center justify-center transition-colors"
-                    >
-                      <ChevronLeft size={15} />
-                    </button>
-                    <span className="w-6 text-center text-base font-bold text-gray-800">
-                      {item.quantity}
-                    </span>
-                    <button
-                      onClick={() => increase(item.id, item.quantity)}
-                      className="w-8 h-8 rounded-full border border-gray-200 bg-white hover:border-orange-400 hover:text-orange-500 flex items-center justify-center transition-colors"
-                    >
-                      <ChevronRight size={15} />
-                    </button>
-                  </div>
-
-                  <p className="hidden md:block text-center text-base font-bold text-gray-900">
-                    ${(item.price * item.quantity).toFixed(2)}
-                  </p>
                 </div>
               ))}
 
-              <div className="px-4 md:px-6 py-5">
-                <Link
-                  href="/products"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
-                >
-                  <ArrowLeft size={15} />
-                  Continue Shopping
-                </Link>
-              </div>
-            </div>
-          )}
-        </section>
-
-        <aside className="w-full lg:col-span-1 lg:sticky lg:top-6">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 md:p-6 flex flex-col gap-5">
-
-            <h2 className="text-lg font-bold text-gray-900">Order Summary</h2>
-
-            <div className="flex flex-col gap-2">
-              <label className="text-[11px] font-bold text-gray-500 uppercase tracking-widest flex items-center gap-1">
-                <MapPin size={12} className="text-orange-400" />
-                Select Address
-              </label>
-              <select
-                value={selectedAddress}
-                onChange={(e) => setSelectedAddress(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-600 bg-white focus:outline-none focus:ring-2 focus:ring-orange-300 transition"
+              {/* Continue Shopping */}
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors mt-2"
               >
-                <option value="">Select Address</option>
-                <option value="home">🏠 Home Address</option>
-                <option value="work">🏢 Work Address</option>
-              </select>
-              <button
-                onClick={() => setShowAddAddress(!showAddAddress)}
-                className="w-full py-2.5 border border-dashed border-gray-300 rounded-xl text-sm font-semibold text-gray-500 hover:border-orange-400 hover:text-orange-500 transition-colors flex items-center justify-center gap-1.5"
-              >
-                <Plus size={14} />
-                Add New Address
-              </button>
-              {showAddAddress && (
-                <input
-                  type="text"
-                  placeholder="Enter new address..."
-                  className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 transition"
-                />
-              )}
+                <ArrowLeft size={15} />
+                Continue Shopping
+              </Link>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <input
-                type="text"
-                placeholder="Enter promo code"
-                value={promoCode}
-                onChange={(e) => setPromoCode(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-300 transition"
-              />
-              <button
-                onClick={applyPromo}
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700"
-              >
-                {promoApplied ? "✓ Applied!" : "Apply"}
-              </button>
-            </div>
+            {/* ── Right: Order Summary ── */}
+            <div className="w-full lg:col-span-1 lg:sticky lg:top-20">
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex flex-col gap-4">
 
-            <div className="h-px bg-gray-100" />
+                <h2 className="text-base font-bold text-gray-900">Order Summary</h2>
 
-            <div className="flex flex-col gap-3 text-sm">
-              <div className="flex justify-between text-gray-500">
-                <span>Items {itemCount}</span>
-                <span className="font-semibold text-gray-800">${subtotal.toFixed(2)}</span>
+                {/* Address */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1">
+                    <MapPin size={11} className="text-blue-400" />
+                    Select Address
+                  </label>
+                  <select
+                    value={selectedAddress}
+                    onChange={(e) => setSelectedAddress(e.target.value)}
+                    className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-600 bg-white focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
+                  >
+                    <option value="">Select Address</option>
+                    <option value="home">🏠 Home Address</option>
+                    <option value="work">🏢 Work Address</option>
+                  </select>
+                  <button
+                    onClick={() => setShowAddAddress(!showAddAddress)}
+                    className="w-full py-2 border border-dashed border-gray-300 rounded-xl text-xs font-semibold text-gray-500 hover:border-blue-400 hover:text-blue-500 transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <Plus size={13} />
+                    Add New Address
+                  </button>
+                  {showAddAddress && (
+                    <input
+                      type="text"
+                      placeholder="Enter new address..."
+                      className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
+                    />
+                  )}
+                </div>
+
+                {/* Promo */}
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="Promo code"
+                    value={promoCode}
+                    onChange={(e) => setPromoCode(e.target.value)}
+                    className="flex-1 px-3 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
+                  />
+                  <button
+                    onClick={applyPromo}
+                    className="px-4 py-2.5 bg-gray-900 hover:bg-blue-600 text-white text-sm font-bold rounded-xl transition-colors"
+                  >
+                    {promoApplied ? "✓" : "Apply"}
+                  </button>
+                </div>
+
+                <div className="h-px bg-gray-100" />
+
+                {/* Price Breakdown */}
+                <div className="flex flex-col gap-2.5 text-sm">
+                  <div className="flex justify-between text-gray-500">
+                    <span>Subtotal ({itemCount} items)</span>
+                    <span className="font-semibold text-gray-800">${subtotal.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between text-gray-500">
+                    <span>Shipping</span>
+                    <span className="font-semibold text-emerald-600">Free</span>
+                  </div>
+                  <div className="flex justify-between text-gray-500">
+                    <span>Tax (2%)</span>
+                    <span className="font-semibold text-gray-800">${tax.toFixed(2)}</span>
+                  </div>
+                </div>
+
+                <div className="h-px bg-gray-100" />
+
+                {/* Total */}
+                <div className="flex justify-between items-center">
+                  <span className="text-base font-bold text-gray-900">Total</span>
+                  <span className="text-2xl font-black text-blue-600">${total.toFixed(2)}</span>
+                </div>
+
+                <button className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-100">
+                  Place Order
+                </button>
+
               </div>
-              <div className="flex justify-between text-gray-500">
-                <span>Shipping Fee</span>
-                <span className="font-semibold text-emerald-600">Free</span>
-              </div>
-              <div className="flex justify-between text-gray-500">
-                <span>Tax (2%)</span>
-                <span className="font-semibold text-gray-800">${tax.toFixed(2)}</span>
-              </div>
             </div>
-
-            <div className="h-px bg-gray-100" />
-
-            <div className="flex justify-between items-center">
-              <span className="text-base font-bold text-gray-900">Total</span>
-              <span className="text-xl font-black text-gray-900">${total.toFixed(2)}</span>
-            </div>
-
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700">
-              Place Order
-            </button>
 
           </div>
-        </aside>
-
+        )}
       </main>
     </div>
   );

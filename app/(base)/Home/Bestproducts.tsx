@@ -6,12 +6,14 @@ export default function BestProducts() {
 
   const { addToCart } = useCart();
   const { favourites, toggleFavorite } = useHeart();
+
 const products = [
   { id: 1, title: "ساعة ذكية Ultra", name: "ساعة ذكية Ultra", price: 299, image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500", category: "إلكترونيات" },
   { id: 2, title: "سماعات لاسلكية Pro", name: "سماعات لاسلكية Pro", price: 150, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500", category: "إكسسوارات" },
   { id: 3, title: "حقيبة ظهر عصرية", name: "حقيبة ظهر عصرية", price: 85, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500", category: "موضة" },
   { id: 4, title: "نظارات شمسية كلاسيك", name: "نظارات شمسية كلاسيك", price: 120, image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500", category: "موضة" },
 ];
+
 const isFavorite = (id: number | string) => favourites?.some((item: any) => item.id === id);
 
   return(
@@ -69,5 +71,3 @@ const isFavorite = (id: number | string) => favourites?.some((item: any) => item
 </>
 );
  }
-
-

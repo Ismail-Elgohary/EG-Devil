@@ -20,8 +20,8 @@ export default function ProductCard({
 			removeFromCart(post.id);
 		} else {
 			addToCart({
-				id: Number(post.id),           // ✅ تحويل لـ number
-				name: post.name ?? post.title ?? "", // ✅ يقبل name أو title
+				id: Number(post.id),
+				name: post.name ?? post.title ?? "",
 				price: post.price,
 				image: post.image,
 			});

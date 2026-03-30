@@ -2,7 +2,7 @@
 import { createContext, useContext, useState } from "react";
 
 interface CartItem {
-  id: number | string;   // ✅
+  id: number | string;
   name: string;
   price: number;
   image: string;
@@ -12,9 +12,9 @@ interface CartItem {
 interface CartContextType {
   cart: CartItem[];
   addToCart: (product: Omit<CartItem, "quantity">) => void;
-  removeFromCart: (productId: number | string) => void;  // ✅
-  updateCart: (productId: number | string, quantity: number) => void;  // ✅
-  isInCart: (productId: number | string) => boolean;  // ✅
+  removeFromCart: (productId: number | string) => void;
+  updateCart: (productId: number | string, quantity: number) => void;
+  isInCart: (productId: number | string) => boolean;
   clearCart: () => void;
   cartCount: number;
 }
@@ -42,11 +42,11 @@ export default function CartProvider({
     });
   };
 
-  const removeFromCart = (productId: number | string) => {  // ✅
+  const removeFromCart = (productId: number | string) => {
     setCart((prev) => prev.filter((item) => item.id !== productId));
   };
 
-  const updateCart = (productId: number | string, quantity: number) => {  // ✅
+  const updateCart = (productId: number | string, quantity: number) => {
     if (quantity <= 0) {
       removeFromCart(productId);
       return;
@@ -58,7 +58,7 @@ export default function CartProvider({
     );
   };
 
-  const isInCart = (productId: number | string) => {  // ✅
+  const isInCart = (productId: number | string) => {
     return cart.some((item) => item.id === productId);
   };
 

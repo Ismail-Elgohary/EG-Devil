@@ -67,7 +67,6 @@ export default function CartPage() {
                 <span className="text-center">Subtotal</span>
               </div>
 
-              {/* Rows */}
               {cart.map((item) => (
                 <div
                   key={item.id}

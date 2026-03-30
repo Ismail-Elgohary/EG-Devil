@@ -5,7 +5,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 interface HeartContextType {
   favourites: Tpost[];
   toggleFavorite: (product: Tpost) => void;
-  isFavorite: (productId: number | string) => boolean; // ✅
+  isFavorite: (productId: number | string) => boolean;
 }
 
 const HeartContext = createContext<HeartContextType | undefined>(undefined);
@@ -21,7 +21,7 @@ export default function HeartProvider({ children }: { children: React.ReactNode 
     localStorage.setItem('favourites', JSON.stringify(favourites));
   }, [favourites]);
 
-  const isFavorite = (productId: number | string) => { // ✅
+  const isFavorite = (productId: number | string) => {
     return favourites.some(p => p.id === productId);
   };
 

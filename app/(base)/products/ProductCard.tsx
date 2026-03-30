@@ -20,8 +20,8 @@ export default function ProductCard({
 			removeFromCart(post.id);
 		} else {
 			addToCart({
-				id: post.id,
-				name: post.name,
+				id: Number(post.id),           // ✅ تحويل لـ number
+				name: post.name ?? post.title ?? "", // ✅ يقبل name أو title
 				price: post.price,
 				image: post.image,
 			});
@@ -40,7 +40,7 @@ export default function ProductCard({
 				<img
 					className="relative z-10 w-full h-50 object-contain drop-shadow transition-transform duration-500 group-hover:scale-110"
 					src={post.image}
-					alt={post.name}
+					alt={post.name ?? post.title ?? "product"}
 				/>
 				<button
 					onClick={() => toggleFavorite(post)}

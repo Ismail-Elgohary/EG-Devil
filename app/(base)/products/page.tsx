@@ -1,15 +1,9 @@
-export const runtime = "nodejs";
 import { Tpost } from "../../types/type";
 import ProductCard from "./ProductCard";
+import data from "../../api/db.json";
+export default function Products() {
 
-export default async function Products() {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
-		cache: "no-store",
-	});
-	if (!res.ok) {
-		throw new Error("Failed to fetch products");
-	}
-	const posts: Tpost[] = await res.json();
+	const posts: Tpost[] = data as Tpost[];
 
 	return (
 		<div className="bg-gray-50">

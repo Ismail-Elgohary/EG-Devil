@@ -1,9 +1,8 @@
 "use client";
-
 import { createContext, useContext, useState } from "react";
 
 interface CartItem {
-  id: number;
+  id: number | string;   // ✅
   name: string;
   price: number;
   image: string;
@@ -13,9 +12,9 @@ interface CartItem {
 interface CartContextType {
   cart: CartItem[];
   addToCart: (product: Omit<CartItem, "quantity">) => void;
-  removeFromCart: (productId: number) => void;
-  updateCart: (productId: number, quantity: number) => void;
-  isInCart: (productId: number) => boolean;
+  removeFromCart: (productId: number | string) => void;  // ✅
+  updateCart: (productId: number | string, quantity: number) => void;  // ✅
+  isInCart: (productId: number | string) => boolean;  // ✅
   clearCart: () => void;
   cartCount: number;
 }
@@ -32,7 +31,6 @@ export default function CartProvider({
   const addToCart = (product: Omit<CartItem, "quantity">) => {
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);
-
       if (existing) {
         return prev.map((item) =>
           item.id === product.id
@@ -40,21 +38,19 @@ export default function CartProvider({
             : item
         );
       }
-
       return [...prev, { ...product, quantity: 1 }];
     });
   };
 
-  const removeFromCart = (productId: number) => {
+  const removeFromCart = (productId: number | string) => {  // ✅
     setCart((prev) => prev.filter((item) => item.id !== productId));
   };
 
-  const updateCart = (productId: number, quantity: number) => {
+  const updateCart = (productId: number | string, quantity: number) => {  // ✅
     if (quantity <= 0) {
       removeFromCart(productId);
       return;
     }
-
     setCart((prev) =>
       prev.map((item) =>
         item.id === productId ? { ...item, quantity } : item
@@ -62,7 +58,7 @@ export default function CartProvider({
     );
   };
 
-  const isInCart = (productId: number) => {
+  const isInCart = (productId: number | string) => {  // ✅
     return cart.some((item) => item.id === productId);
   };
 

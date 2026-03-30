@@ -20,10 +20,10 @@ export default function CartPage() {
   const tax = subtotal * TAX_RATE;
   const total = subtotal + tax;
 
-  const increase = (id: number, currentQty: number): void =>
+  const increase = (id: number | string, currentQty: number): void =>
     updateCart(id, currentQty + 1);
 
-  const decrease = (id: number, currentQty: number): void =>
+  const decrease = (id: number | string, currentQty: number): void =>
     updateCart(id, currentQty - 1);
 
   const applyPromo = (): void => {

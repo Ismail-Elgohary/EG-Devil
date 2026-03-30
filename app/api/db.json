@@ -1,5 +1,4 @@
-{
-  "products": [
+[
     {
       "id": "1",
       "title": "Men's T-Shirt",
@@ -7,10 +6,7 @@
       "description": "Under Armour Men's Tech 2.0 Short-Sleeve T-Shirt",
       "category": "t-shirt",
       "image": "https://m.media-amazon.com/images/I/81cX5SrwD8L._AC_UL480_QL65_.jpg",
-      "rating": {
-        "rate": 1.9,
-        "count": 100
-      }
+      "rating": { "rate": 1.9, "count": 100 }
     },
     {
       "id": "2",
@@ -19,10 +15,7 @@
       "description": "Nike Boy's NSW Pull Over Hoodie Club",
       "category": "Hodies",
       "image": "https://m.media-amazon.com/images/I/71zdwdDgt-L._AC_UL480_QL65_.jpg",
-      "rating": {
-        "rate": 2.9,
-        "count": 470
-      }
+      "rating": { "rate": 2.9, "count": 470 }
     },
     {
       "id": "3",
@@ -31,22 +24,16 @@
       "description": "SOLY HUX Boy's Zip Up Hoodies Sweatshirt Y2k Letter Graphic Long Sleeve Streetwear Jacket",
       "category": "Hody",
       "image": "https://m.media-amazon.com/images/I/61291tTiTpL._AC_SY500_.jpg",
-      "rating": {
-        "rate": 4.8,
-        "count": 319
-      }
+      "rating": { "rate": 4.8, "count": 319 }
     },
     {
       "id": "4",
       "title": "Men's Hoodie",
       "price": 1317,
       "description": "wangstar Graphic Hoodies for Boys Sweatshirts Baseball Gifts for Teen Boys Fashion Hoodies Size 14-16 Cool Football Stuff",
-      "category": "hody ",
+      "category": "hody",
       "image": "https://m.media-amazon.com/images/I/61qRavw1nDL._AC_SY500_.jpg",
-      "rating": {
-        "rate": 4.8,
-        "count": 400
-      }
+      "rating": { "rate": 4.8, "count": 400 }
     },
     {
       "id": "5",
@@ -55,110 +42,92 @@
       "description": "wangstar Graphic Hoodies for Boys Sweatshirts Baseball Gifts for Teen Boys Fashion Hoodies Size 14-16 Cool Football Stuff",
       "category": "hody",
       "image": "https://m.media-amazon.com/images/I/61zDhh8th3L._AC_SY500_.jpg",
-      "rating": {
-        "rate": 2.9,
-        "count": 250
-      }
+      "rating": { "rate": 2.9, "count": 250 }
     },
     {
       "id": "6",
-      "title": "Men,s jacket",
+      "title": "Men's Jacket",
       "price": 1700,
       "description": "TACVASEN Men's Bomber Jacket Lightweight Casual Spring Fall Windbreaker Zip Up Coat with Pocket",
       "category": "jacket",
       "image": "https://m.media-amazon.com/images/I/71rNJdgvB1L._AC_SX569_.jpg",
-      "rating": {
-        "rate": 2.2,
-        "count": 140
-      }
+      "rating": { "rate": 2.2, "count": 140 }
     },
     {
       "id": "7",
       "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
       "price": 56.99,
-      "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+      "description": "100% Polyester. Detachable Liner Fabric: Warm Fleece.",
       "category": "women's clothing",
       "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
-      "rating": {
-        "rate": 2.6,
-        "count": 235
-      }
+      "rating": { "rate": 2.6, "count": 235 }
     },
     {
       "id": "8",
-      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "title": "Lock and Love Women's Faux Leather Moto Biker Jacket",
       "price": 29.95,
-      "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+      "description": "100% POLYURETHANE shell. Faux leather material for style and comfort.",
       "category": "women's clothing",
       "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
-      "rating": {
-        "rate": 2.9,
-        "count": 340
-      }
+      "rating": { "rate": 2.9, "count": 340 }
     },
     {
       "id": "9",
       "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
       "price": 39.99,
-      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+      "description": "Lightweight perfect for trip or casual wear.",
       "category": "women's clothing",
       "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
-      "rating": {
-        "rate": 3.8,
-        "count": 679
-      }
+      "rating": { "rate": 3.8, "count": 679 }
     },
     {
       "id": "10",
-      "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+      "title": "MBJ Women's Solid Short Sleeve Boat Neck V",
       "price": 9.85,
-      "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+      "description": "95% RAYON 5% SPANDEX. Lightweight fabric with great stretch for comfort.",
       "category": "women's clothing",
       "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
-      "rating": {
-        "rate": 4.7,
-        "count": 130
-      }
+      "rating": { "rate": 4.7, "count": 130 }
     },
     {
       "id": "11",
-      "title": "Gaming Laptop",
+      "title": "Flannel Lined Shirt Jacket",
       "price": 1500,
       "category": "jacket",
       "image": "https://m.media-amazon.com/images/I/71kiKJpww7L._AC_UL480_QL65_.jpg",
-      "description": "Legendary Whitetails Mens Flannel Lined Shirt Jacket Waxed Cotton Water Resistant Shacket "
+      "description": "Legendary Whitetails Mens Flannel Lined Shirt Jacket Waxed Cotton Water Resistant Shacket"
     },
     {
       "id": "22",
-      "title": "mens",
+      "title": "Camo Hoodie",
       "price": 700,
       "category": "mens",
       "image": "https://m.media-amazon.com/images/I/81zin9FjtoL._AC_UL480_FMwebp_QL65_.jpg",
-      "description": "Camo Hoodie for Men Women Oversized Fleece Maple Leaf Hooded Sweatshirt Graphic Print Pullover Hoodies with Pocket "
+      "description": "Camo Hoodie for Men Women Oversized Fleece Maple Leaf Hooded Sweatshirt"
     },
     {
       "id": "23",
-      "title": "mens",
+      "title": "Wide Leg Sweatpants",
       "price": 800,
       "category": "wide-leg",
       "image": "https://m.media-amazon.com/images/I/61jjuJWI2JL._AC_UL480_QL65_.jpg",
-      "description": "Men's Baggy Sweatpants Fleece Wide Leg Lounge Pants Drawstring Waist Loose Fit Cotton Jogging Sweat Pants with Pockets"
+      "description": "Men's Baggy Sweatpants Fleece Wide Leg Lounge Pants"
     },
     {
       "id": "24",
-      "title": "mens",
+      "title": "Faith Over Fear Hoodie",
       "price": 250,
       "category": "mens",
       "image": "https://m.media-amazon.com/images/I/61GtbiQL9YL._AC_UL480_FMwebp_QL65_.jpg",
-      "description": "BANGELY Faith Over Fear Hoodie Women Christian Sweatshirt Graphic Christian Religious Sayings Sweater Bible Pullover Tops"
+      "description": "BANGELY Faith Over Fear Hoodie Christian Sweatshirt"
     },
     {
       "id": "25",
-      "title": "mens teshirt",
+      "title": "Mens Graphic Tee",
       "price": 80,
       "category": "t-shirt",
       "image": "https://m.media-amazon.com/images/I/71xP35notIL._AC_UL480_FMwebp_QL65_.jpg",
-      "description": "UOUA Mens Graphic Tees Vintage Oversized T-Shirts Casual Acid Wash Cotton Streetwear "
+      "description": "UOUA Mens Graphic Tees Vintage Oversized T-Shirts Casual Acid Wash Cotton Streetwear"
     },
     {
       "id": "26",
@@ -170,11 +139,11 @@
     },
     {
       "id": "27",
-      "title": "hody",
+      "title": "Leopard Hoodie",
       "price": 95,
       "category": "hody",
       "image": "https://m.media-amazon.com/images/I/71MmxGyNaDL._AC_UL480_QL65_.jpg",
-      "description": "SOLY HUX Women's Hoodies Leopard Graphic Drop Shoulder Long Sleeve Hooded Preppy Sweatshirts Streetwear"
+      "description": "SOLY HUX Women's Hoodies Leopard Graphic Drop Shoulder Long Sleeve"
     },
     {
       "id": "28",
@@ -186,7 +155,7 @@
     },
     {
       "id": "29",
-      "title": "shirt",
+      "title": "Y2k Baggy Shirt",
       "price": 100,
       "category": "t-shirt",
       "image": "https://m.media-amazon.com/images/I/71IUMJCF66L._AC_SY500_.jpg",
@@ -194,75 +163,66 @@
     },
     {
       "id": "30",
-      "title": "jacket",
+      "title": "Zip Up Hoodie Jacket",
       "price": 700,
       "category": "jacket",
       "image": "https://m.media-amazon.com/images/I/71FJfiEfe9L._AC_UL480_QL65_.jpg",
-      "description": "SOLY HUX Men's Graphic Zip Up Hoodies Streetwear Jacket Letter Print Long Sleeve Sweatshirt with Pocket"
+      "description": "SOLY HUX Men's Graphic Zip Up Hoodies Streetwear Jacket"
     },
-
- {
-  "id": "31",
-  "title": "جاكيت جلد",
-  "price": 1000,
-  "category": "clothes",
-  "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",
-  "description": "jacket"
-},
-
- {
-  "id": "32",
-  "title": "جاكيت جينز",
-  "price": 1500,
-  "category": "mens",
-  "image": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?q=80&w=669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "description": "A clean, modern outfit designed for comfort and everyday style. Perfect for a casual yet trendy look"
-},
-
- {
-  "id": "33",
-  "title": "",
-  "price": 500,
-  "category": "mens",
-  "image": "https://images.unsplash.com/photo-1740711152088-88a009e877bb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
-  "description": "Men's Casual Linen Shirt_by LINENESE"
-},
-
- {
-  "id": "34",
-  "title": "",
-  "price": 900,
-  "category": "mens",
-  "image": "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?q=80&w=692&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "description": "A clean, modern outfit designed for comfort and everyday style. Perfect for a casual yet trendy look"
-},
-
- {
-  "id": "35",
-  "title": "",
-  "price": 900,
-  "category": "mens",
-  "image": "https://images.unsplash.com/photo-1687275160744-ef140bf5529c?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "description": "A clean, modern outfit designed for comfort and everyday style. Perfect for a casual yet trendy look"
-},
-
- {
-  "id": "36",
-  "title": "",
-  "price": 350,
-  "category": "mens",
-  "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dCUyMHNoaXJ0fGVufDB8fDB8fHww",
-  "description": "t-shirt"
-},
-
- {
-  "id": "37",
-  "title": "",
-  "price": 500,
-  "category": "mens",
-  "image": "https://images.unsplash.com/photo-1618354691551-44de113f0164?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "description": "Plain Long Sleeve T Shirt great for product mockup photos"
-}
-
-  ]
-}
+    {
+      "id": "31",
+      "title": "جاكيت جلد",
+      "price": 1000,
+      "category": "clothes",
+      "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",
+      "description": "jacket"
+    },
+    {
+      "id": "32",
+      "title": "جاكيت جينز",
+      "price": 1500,
+      "category": "mens",
+      "image": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?q=80&w=669&auto=format&fit=crop",
+      "description": "A clean, modern outfit designed for comfort and everyday style."
+    },
+    {
+      "id": "33",
+      "title": "Men's Casual Linen Shirt",
+      "price": 500,
+      "category": "mens",
+      "image": "https://images.unsplash.com/photo-1740711152088-88a009e877bb?w=600&auto=format&fit=crop&q=60",
+      "description": "Men's Casual Linen Shirt by LINENESE"
+    },
+    {
+      "id": "34",
+      "title": "Casual Outfit",
+      "price": 900,
+      "category": "mens",
+      "image": "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?q=80&w=692&auto=format&fit=crop",
+      "description": "A clean, modern outfit designed for comfort and everyday style."
+    },
+    {
+      "id": "35",
+      "title": "Casual Outfit",
+      "price": 900,
+      "category": "mens",
+      "image": "https://images.unsplash.com/photo-1687275160744-ef140bf5529c?q=80&w=764&auto=format&fit=crop",
+      "description": "A clean, modern outfit designed for comfort and everyday style."
+    },
+    {
+      "id": "36",
+      "title": "T-Shirt",
+      "price": 350,
+      "category": "mens",
+      "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop&q=60",
+      "description": "t-shirt"
+    },
+    {
+      "id": "37",
+      "title": "Long Sleeve T-Shirt",
+      "price": 500,
+      "category": "mens",
+      "image": "https://images.unsplash.com/photo-1618354691551-44de113f0164?q=80&w=715&auto=format&fit=crop",
+      "description": "Plain Long Sleeve T Shirt great for product mockup photos"
+    }
+]

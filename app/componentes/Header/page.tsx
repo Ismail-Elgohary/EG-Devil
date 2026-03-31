@@ -19,7 +19,7 @@ export default function Header() {
 
    const listLinks = [
     { name: "Products", href: "/products" },
-    { name: "Add Product", href: "/products/add" },
+    { name: "Add Product", href: "/addProduct"},
   ];
 
   return (

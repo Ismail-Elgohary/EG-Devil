@@ -16,6 +16,14 @@ const  handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		toast.error("Please Fill All Fields");
 		return;
 	}
+
+
+const isGmail = email.toLowerCase().endsWith("@gmail.com");
+if (!isGmail) {
+  toast.error("Email must be a Gmail address (@gmail.com)");
+  return;
+}
+
    console.log({name, email, password});
    router.replace("/");
 };

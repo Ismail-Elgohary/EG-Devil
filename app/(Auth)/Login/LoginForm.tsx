@@ -8,7 +8,6 @@ const router = useRouter();
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 
-
 const  handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 	e.preventDefault();
 
@@ -16,6 +15,13 @@ const  handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		toast.error("Please Fill All Fields");
 		return;
 	}
+
+const isGmail = email.toLowerCase().endsWith("@gmail.com");
+if (!isGmail) {
+  toast.error("Email must be a Gmail address (@gmail.com)");
+  return;
+}
+
    console.log({email, password});
    router.replace("/");
 };

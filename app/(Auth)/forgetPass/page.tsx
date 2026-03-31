@@ -13,6 +13,13 @@ export default function ForgotPasswordForm() {
       toast.error("Please enter your email");
       return;
     }
+
+const isGmail = email.toLowerCase().endsWith("@gmail.com");
+if (!isGmail) {
+  toast.error("Email must be a Gmail address (@gmail.com)");
+  return;
+}
+
     toast.success("Reset link sent to your email!");
     console.log({ email });
     router.replace("/Login");

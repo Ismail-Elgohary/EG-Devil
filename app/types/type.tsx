@@ -9,4 +9,4 @@ type Tpost = {
   rating?: { rate: number; count: number };
 };
 
-export type { Tpost };
+export type { Tpost};

@@ -105,13 +105,14 @@ export default function Header() {
           ))}
 
 
-{/* Product btn in mobile menu */}
-<button
-  onClick={() => setMobileList(!mobilelist)}
-  className="flex items-center justify-between text-lg font-extrabold text-white hover:text-indigo-400"
->
-  Products
-  <ChevronDown
+			{/* Product btn in mobile menu */}
+      <button
+      onClick={() => setMobileList(!mobilelist)}
+      className="flex items-center justify-between text-lg
+        font-extrabold text-white hover:text-indigo-400"
+         >
+      Products
+    <ChevronDown
     className={`w-5 h-5 transition-transform duration-300 ${
       mobilelist ? "rotate-180" : ""
     }`}

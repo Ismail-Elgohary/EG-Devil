@@ -13,9 +13,10 @@ export default function FavouritesPage() {
     <div className="min-h-screen bg-gray-50 font-sans">
 
       <header className="border-b border-gray-200 px-4 md:px-8 py-5 flex items-center justify-between">
-        <h1 className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">
-          Your <span className="text-red-500">Favourites</span>
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900">
+          Your <span className="text-blue-600">Favoutites</span>
         </h1>
+
         <span className="text-sm text-gray-400 font-medium">{favourites.length} Items</span>
       </header>
 
@@ -28,12 +29,9 @@ export default function FavouritesPage() {
             </div>
             <div className="text-center">
               <p className="text-xl font-bold text-gray-700">No favourites yet</p>
-              <p className="text-sm text-gray-400 mt-1">Add some products to your wishlist!</p>
+              <p className="text-sm text-gray-400 mt-1">Add some products to your wishlist</p>
             </div>
-            <Link
-              href="/products"
-              className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-bold transition-colors"
-            >
+           <Link href="/products" className="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-colors">
               Browse Products
             </Link>
           </div>
@@ -72,7 +70,7 @@ export default function FavouritesPage() {
                       onClick={() => toggleFavorite(item)}
                       className="flex items-center gap-1.5 text-xs font-bold text-red-500 hover:text-red-600 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition-all w-fit"
                     >
-                      <Trash2 size={13} />
+                      <Trash2 size={20} />
                       Remove
                     </button>
                   </div>
@@ -94,7 +92,7 @@ export default function FavouritesPage() {
                     }
                     className="flex items-center gap-2 px-4 py-2.5 bg-gray-900 hover:bg-blue-600 text-white text-sm font-bold rounded-xl transition-colors w-full md:w-auto justify-center"
                   >
-                    <ShoppingCart size={15} />
+                    <ShoppingCart size={18} />
                     Add to Cart
                   </button>
                 </div>
@@ -104,7 +102,7 @@ export default function FavouritesPage() {
             <div className="px-4 md:px-6 py-5">
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-red-500 hover:text-red-600 transition-colors"
+                className="inline-flex items-center gap-2 text-xl font-semibold text-red-500 hover:text-red-600 transition-colors"
               >
                 ← Continue Shopping
               </Link>

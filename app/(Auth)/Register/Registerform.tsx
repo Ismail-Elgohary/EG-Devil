@@ -7,12 +7,14 @@ export default function RegisterForm() {
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [name, setName] = useState("");
+const [user, setUser] = useState("");
+const [confirm, setConfirm] = useState("");
 const router = useRouter();
 
 const  handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 	e.preventDefault();
 
-	if(name === "" || email === "" || password === ""){
+	if(name === "" || email === "" || password === "" || user === "" || confirm === ""){
 		toast.error("Please Fill All Fields");
 		return;
 	}
@@ -24,7 +26,7 @@ if (!isGmail) {
   return;
 }
 
-   console.log({name, email, password});
+   console.log({name, email, password, user, confirm});
    router.replace("/");
 };
 
@@ -49,6 +51,22 @@ return(
           </div>
 
           <div className="flex flex-col gap-1.5">
+            <label htmlFor="Type" className="text-sm font-semibold text-slate-700">
+              Type
+            </label>
+            <select
+              id="type"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+              className="border border-indigo-100 rounded-xl px-4 py-3 w-full bg-indigo-50/50
+              focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-transparent
+              text-slate-700 transition-all duration-200">
+              <option value="">User</option>
+              <option value="t-shirt">Seller</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col gap-1.5">
             <label htmlFor="email" className="text-sm font-semibold text-slate-700">
               Email
             </label>
@@ -68,9 +86,6 @@ return(
               <label htmlFor="password" className="text-sm font-semibold text-slate-700">
                 Password
               </label>
-              <a href="#" className="text-xs text-indigo-500 hover:text-indigo-700 transition-colors">
-                Forgot password?
-              </a>
             </div>
             <input
               type="password"
@@ -78,6 +93,25 @@ return(
               placeholder="••••••••"
 			  value={password}
 			  onChange={(e) => setPassword(e.target.value)}
+			  className="border border-indigo-100 rounded-xl px-4 py-3 w-full bg-indigo-50/50
+			  focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-transparent
+			  text-slate-700 placeholder:text-slate-300 transition-all duration-200"
+            />
+          </div>
+
+
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center justify-between">
+              <label htmlFor="password" className="text-sm font-semibold text-slate-700">
+               confirm Password
+              </label>
+            </div>
+            <input
+              type="password"
+              id="password"
+              placeholder="••••••••"
+			  value={confirm}
+			  onChange={(e) => setConfirm(e.target.value)}
 			  className="border border-indigo-100 rounded-xl px-4 py-3 w-full bg-indigo-50/50
 			  focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-transparent
 			  text-slate-700 placeholder:text-slate-300 transition-all duration-200"
@@ -101,7 +135,7 @@ return(
           </div>
 
           <p className="text-center text-sm text-slate-500">
-            Don't have an account?{" "}
+            Already have an account ? {" "}
             <a href="/Login" className="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
               Login in
             </a>

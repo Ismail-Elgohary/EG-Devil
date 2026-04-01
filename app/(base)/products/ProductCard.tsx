@@ -51,7 +51,7 @@ export default function ProductCard({
 					}`}
 				>
 					<Heart
-						size={14}
+						size={20}
 						className={isFavorite(post.id) ? "fill-current" : ""}
 					/>
 				</button>

@@ -200,9 +200,9 @@ export default function CartPage() {
                   <span className="text-2xl font-black text-gray-900">${total.toFixed(2)}</span>
                 </div>
 
-                <button className="w-full py-4 bg-gray-900 hover:bg-gray-800 active:scale-[0.98] text-white font-bold text-sm rounded-xl transition-all tracking-wide">
+                <Link href="/sucess" className="w-full py-4 bg-gray-900 hover:bg-gray-800 active:scale-[0.98] text-white font-bold text-sm rounded-xl transition-all tracking-wide text-center">
                   Place Order
-                </button>
+                </Link>
               </div>
             </div>
           </div>

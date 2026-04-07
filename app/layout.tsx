@@ -1,11 +1,12 @@
+import Footer from "@/app/componentes/Footer/page";
+import Header from "@/app/componentes/Header/page";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "@/app/componentes/Header/page";
-import Footer from "@/app/componentes/Footer/page";
 import { ToastContainer } from "react-toastify";
 import CartProvider from "./(base)/context/Cartshop";
 import HeartProvider from "./(base)/context/FavoritesContext";
+import "./globals.css";
+import Providers from "./providers";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -30,15 +31,16 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
-				<HeartProvider>
-					<CartProvider>
-						<Header />
-						<ToastContainer />
-						<main className="mt-16">{children}</main>
-						<Footer />
-					</CartProvider>
-				</HeartProvider>
+			>   <Providers>
+					<HeartProvider>
+						<CartProvider>
+							<Header />
+							<ToastContainer />
+							<main className="mt-16">{children}</main>
+							<Footer />
+						</CartProvider>
+					</HeartProvider>
+				</Providers>
 			</body>
 		</html>
 	);

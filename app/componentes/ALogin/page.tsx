@@ -13,6 +13,8 @@ export default function ALoginPage() {
 	const userLinks = [
 		{ name: "Login", href: "/Login", icon: LogIn },
 		{ name: "Register", href: "/Register", icon: UserPlus },
+		{ name: "Profile", href: "/Profile", icon: UserPlus },
+
 	];
 
 	return (
@@ -65,6 +67,12 @@ export default function ALoginPage() {
 								>
 									Logout
 								</button>
+
+								<Link href="/Profile"
+									className="w-full text-left px-3 py-2 text-blue-500 hover:bg-indigo-500/10"
+								>
+									Porfile
+								</Link>
 							</>
 						) : (
 							userLinks.map((link) => (

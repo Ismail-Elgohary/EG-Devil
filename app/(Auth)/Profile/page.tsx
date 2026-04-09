@@ -54,7 +54,7 @@ export default function ProfilePage() {
 				</div>
 
 				<button
-					onClick={() => signOut({ callbackUrl: "/Login" })}
+					onClick={() => signOut({ callbackUrl: window.location.origin + "/Login" })}
 					className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-xl transition"
 				>
 					Logout

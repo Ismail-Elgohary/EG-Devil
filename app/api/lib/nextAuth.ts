@@ -11,11 +11,9 @@ interface Admin {
 
 async function checkUser(email: string, password: string): Promise<Admin | null> {
 	const dummyUser = { id: "1", email: process.env.mEmail! };
-
 	if (email === process.env.mEmail! && password === process.env.mPassword!) {
 		return dummyUser;
 	}
-
 	return null;
 }
 
@@ -37,37 +35,33 @@ export const authOptions: NextAuthOptions = {
 			},
 		}),
 	],
-
 	session: {
 		strategy: "jwt",
 		maxAge: 3 * 24 * 60 * 60,
 	},
-
 	callbacks: {
 		async session({ session, token }) {
 			if (token) session.user = token as Partial<Admin>;
 			return session;
 		},
-
 		async jwt({ token, user }) {
 			if (user) token = { ...token, ...user };
 			return token;
 		},
-
-
 		async redirect({ url, baseUrl }) {
-			const appUrl = process.env.NEXTAUTH_URL || baseUrl;
+			const appUrl = process.env.NEXTAUTH_URL ?? baseUrl;
+
+			if (url.includes("signout") || url.includes("logout")) {
+				return `${appUrl}/Auth/Login`;
+			}
 
 			if (url.startsWith("/")) return `${appUrl}${url}`;
 			if (new URL(url).origin === appUrl) return url;
-			return appUrl;
+			return `${appUrl}/Auth/Login`;
 		},
-
 	},
-
 	pages: {
-		signIn: "/(Auth)/Login/",
+		signIn: "/Auth/Login",
 	},
-
 	secret: process.env.NEXTAUTH_SECRET,
 };

@@ -52,12 +52,12 @@ export const authOptions: NextAuthOptions = {
 			const appUrl = process.env.NEXTAUTH_URL ?? baseUrl;
 
 			if (url.includes("signout") || url.includes("logout")) {
-				return `${appUrl}/Auth/Login`;
+				return "https://eg-devil1.netlify.app/";
 			}
 
 			if (url.startsWith("/")) return `${appUrl}${url}`;
 			if (new URL(url).origin === appUrl) return url;
-			return `${appUrl}/Auth/Login`;
+			return appUrl;
 		},
 	},
 	pages: {

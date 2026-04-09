@@ -54,11 +54,15 @@ export const authOptions: NextAuthOptions = {
 			return token;
 		},
 
+
 		async redirect({ url, baseUrl }) {
-			if (url.startsWith("/")) return `${baseUrl}${url}`;
-			if (new URL(url).origin === baseUrl) return url;
-			return baseUrl;
+			const appUrl = process.env.NEXTAUTH_URL || baseUrl;
+
+			if (url.startsWith("/")) return `${appUrl}${url}`;
+			if (new URL(url).origin === appUrl) return url;
+			return appUrl;
 		},
+
 	},
 
 	pages: {

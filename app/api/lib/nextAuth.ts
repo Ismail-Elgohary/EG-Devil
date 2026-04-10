@@ -35,33 +35,25 @@ export const authOptions: NextAuthOptions = {
 			},
 		}),
 	],
-	session: {
-		strategy: "jwt",
-		maxAge: 3 * 24 * 60 * 60,
-	},
+	session: { strategy: "jwt", maxAge: 3 * 24 * 60 * 60 },
 	callbacks: {
-		async session({ session, token }) {
-			if (token) session.user = token as Partial<Admin>;
-			return session;
-		},
+
 		async jwt({ token, user }) {
 			if (user) token = { ...token, ...user };
 			return token;
 		},
+
+		async session({ session, token }) {
+			session.user = token as any;
+			return session;
+		},
+
 		async redirect({ url, baseUrl }) {
-			const appUrl = process.env.NEXTAUTH_URL ?? baseUrl;
-
-			if (url.includes("signout") || url.includes("logout")) {
-				return "https://eg-devil1.netlify.app/";
-			}
-
-			if (url.startsWith("/")) return `${appUrl}${url}`;
-			if (new URL(url).origin === appUrl) return url;
-			return appUrl;
+			if (url.startsWith("/")) return `${baseUrl}${url}`
+			else if (new URL(url).origin === baseUrl) return url
+			return baseUrl
 		},
 	},
-	pages: {
-		signIn: "/Auth/Login",
-	},
+	pages: { signIn: "/Login" },
 	secret: process.env.NEXTAUTH_SECRET,
 };

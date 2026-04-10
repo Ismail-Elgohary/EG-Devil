@@ -1,11 +1,8 @@
 "use client";
-
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-
 export default function ProfilePage() {
 	const { data: session, status } = useSession();
-
 	if (status === "loading") {
 		return (
 			<div className="h-screen flex items-center justify-center text-lg font-semibold">
@@ -13,7 +10,6 @@ export default function ProfilePage() {
 			</div>
 		);
 	}
-
 	if (!session) {
 		return (
 			<div className="h-screen flex items-center justify-center text-lg font-semibold text-red-500">
@@ -21,7 +17,6 @@ export default function ProfilePage() {
 			</div>
 		);
 	}
-
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center p-4">
 			<div className="bg-white shadow-xl rounded-3xl p-8 w-full max-w-md text-center">
@@ -34,15 +29,11 @@ export default function ProfilePage() {
 						className="rounded-full border-4 border-indigo-200 shadow-md"
 					/>
 				</div>
-
 				<h2 className="text-2xl font-bold text-gray-800">
 					{session.user?.name || "No Name"}
 				</h2>
-
 				<p className="text-gray-500 mt-1">{session.user?.email}</p>
-
 				<div className="my-6 border-t"></div>
-
 				<div className="text-left space-y-2 text-sm text-gray-600">
 					<p>
 						<span className="font-semibold">User ID:</span>{" "}
@@ -52,9 +43,8 @@ export default function ProfilePage() {
 						<span className="font-semibold">Status:</span> Logged In
 					</p>
 				</div>
-
 				<button
-					onClick={() => signOut({ callbackUrl: window.location.origin + "/Login" })}
+					onClick={() => signOut({ callbackUrl: "/Auth/Login" })}
 					className="mt-6 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-xl transition"
 				>
 					Logout

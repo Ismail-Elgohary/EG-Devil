@@ -11,6 +11,7 @@ export default function Header() {
  const [list, setList] = useState(false);
  const [mobilelist, setMobileList] = useState(false);
 
+
  const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },

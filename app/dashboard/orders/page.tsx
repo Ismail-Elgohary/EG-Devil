@@ -73,10 +73,10 @@ export default function OrdersPage() {
  });
 
  return (
-  <div className="p-6">
+  <div className="min-h-screen bg-[#0F172A] text-white px-4 py-8 md:px-8 p-6">
 
    <div className="flex items-center justify-between mb-4">
-    <h1 className="text-3xl font-bold text-gray-800">Orders</h1>
+    <h1 className="text-3xl font-bold text-white">Orders</h1>
     <button
      onClick={() => setShowAddModal(true)}
      className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg transition"
@@ -100,8 +100,8 @@ export default function OrdersPage() {
      </thead>
      <tbody>
       {filterOrders.map((order) => (
-       <tr key={order.id} className="border-b border-gray-100 hover:bg-gray-50 transition">
-        <td className="px-4 py-3 text-gray-500">{order.id}</td>
+       <tr key={order.id} className="border-b transition text-yellow-400">
+        <td className="px-4 py-3 text-white">{order.id}</td>
 
         {editingId === order.id ? (
          <>
@@ -169,14 +169,14 @@ export default function OrdersPage() {
          </>
         ) : (
          <>
-          <td className="px-4 py-3 font-medium text-gray-800">{order.customer}</td>
-          <td className="px-4 py-3 text-gray-600">${order.total}</td>
+          <td className="px-4 py-3 font-medium text-blue-400">{order.customer}</td>
+          <td className="px-4 py-3 text-red-600">${order.total}</td>
           <td className="px-4 py-3">
            <span className={`px-2 py-1 rounded-full text-xs font-semibold ${statusStyle(order.status)}`}>
             {order.status}
            </span>
           </td>
-          <td className="px-4 py-3 text-gray-600">{order.date}</td>
+          <td className="px-4 py-3 text-blue-400">{order.date}</td>
           <td className="px-4 py-3">
            <div className="flex gap-2">
             <button onClick={() => handleEdit(order)} className="text-blue-400 hover:text-blue-600 transition">
@@ -197,7 +197,7 @@ export default function OrdersPage() {
 
    {showAddModal && (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-     <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md">
+     <div className="bg-gray-200 rounded-2xl shadow-xl p-6 w-full max-w-md">
       <div className="flex items-center justify-between mb-4">
        <h2 className="text-xl font-bold text-gray-800">Create New Order</h2>
        <button onClick={() => setShowAddModal(false)} className="text-gray-400 hover:text-gray-600">
@@ -207,19 +207,19 @@ export default function OrdersPage() {
       <div className="flex flex-col gap-3">
        <input
         placeholder="Customer Name"
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
+        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400 bg-indigo-300 text-black"
         value={newOrder.customer}
         onChange={(e) => setNewOrder({ ...newOrder, customer: e.target.value })}
        />
        <input
         type="number"
         placeholder="Total"
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
+        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400 bg-indigo-300 text-black"
         value={newOrder.total || ""}
         onChange={(e) => setNewOrder({ ...newOrder, total: Number(e.target.value) })}
        />
        <select
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
+        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400 bg-indigo-300 text-black"
         value={newOrder.status}
         onChange={(e) => setNewOrder({ ...newOrder, status: e.target.value as Order["status"] })}
        >
@@ -230,7 +230,7 @@ export default function OrdersPage() {
        </select>
 
        <select
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
+        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400 bg-indigo-300 text-black"
         value={newOrder.date}
         onChange={(e) => setNewOrder({ ...newOrder, date: e.target.value })}
        >

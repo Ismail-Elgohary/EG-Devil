@@ -24,8 +24,8 @@ export default function Btns() {
    <select
     value={filter}
     onChange={(e) => setFilter(e.target.value as any)}
-    className="px-4 py-2 rounded-lg border border-gray-300 bg-white
-			text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
+    className="px-4 py-2 rounded-lg border border-gray-300 bg-indigo-500 text-black
+			text-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
    >
     <option value="All">All</option>
     <option value="Pending">Pending</option>

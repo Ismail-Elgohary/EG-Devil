@@ -28,18 +28,6 @@ export default function CreateProduct() {
    return;
   }
 
-  /*	if (!image.startsWith("https://")) {
-    toast.error("Image URL must start with https://");
-    return;
-   }
-    const validExtensions = [".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"];
-    const isValidImage = validExtensions.some((ext) => image.toLowerCase().endsWith(ext));
-    if (!isValidImage) {
-      toast.error("Image must be .jpg .png .webp .gif or .svg");
-      return;
-    }
-    */
-
   if (Number(price) <= 0) {
    toast.error("Price must be greater than 0");
    return;

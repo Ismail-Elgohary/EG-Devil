@@ -1,7 +1,7 @@
 "use client";
 
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const ContactPage = () => {
  const [formData, setFormData] = useState({
@@ -63,13 +63,11 @@ const ContactPage = () => {
        </div>
       </div>
 
-      {/* خلفية جمالية بسيطة */}
       <div className="mt-12 opacity-20">
        <div className="w-24 h-24 bg-white rounded-full blur-3xl absolute bottom-10 right-10"></div>
       </div>
      </div>
 
-     {/* قسم نموذج التواصل */}
      <div className="bg-white rounded-2xl shadow-xl p-8">
       <form onSubmit={handleSubmit} className="space-y-6">
        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

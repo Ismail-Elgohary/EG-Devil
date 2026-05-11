@@ -3,7 +3,7 @@
 import { useCartStore } from "@/app/dashboard/store/cartStore";
 import { useFavouriteStore } from "@/app/dashboard/store/favouriteStore";
 
-import { Bell, Heart, ShoppingCart } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import ALoginPage from "../ALogin/page";
 
@@ -29,9 +29,6 @@ export default function Icons() {
 
   <div className="flex items-center gap-1">
 
-   <button className="text-white hover:text-indigo-400 transition">
-    <Bell size={20} />
-   </button>
 
    <Link
     href="/Favoutites"
@@ -74,9 +71,7 @@ export default function Icons() {
 
     </div>
    </Link>
-
    <ALoginPage />
-
   </div>
  );
 }

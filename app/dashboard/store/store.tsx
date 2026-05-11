@@ -1,7 +1,7 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 export type User = {
- id: string;
+ id: number;
  name: string;
  email: string;
  role: string;
@@ -10,51 +10,54 @@ export type User = {
 
 type Store = {
  users: User[];
+ initUsers: () => void;
+ addUser: (user: User) => void;
+ removeUser: (id: number) => void;
+ updateUser: (id: number, newData: Partial<User>) => void;
+}
 
- initUsers: () => Promise<void>;
- addUser: (user: Omit<User, "id">) => Promise<void>;
- removeUser: (id: number) => Promise<void>;
- updateUser: (id: number, newData: Partial<User>) => Promise<void>;
+const saveStorage = (key: string, data: any) => {
+ localStorage.setItem(key, JSON.stringify(data));
 };
 
-const useStore = create<Store>((set, get) => ({
+const getItems = (key: string, fallback: any) => {
+ if (typeof window === "undefined") return fallback;
+ const data = localStorage.getItem(key);
+ return data ? (JSON.parse(data)) : fallback;
+};
+
+const useStore = create<Store>((set) => ({
  users: [],
 
- initUsers: async () => {
-  const res = await fetch("/api/users");
-  const data = await res.json();
-  set({ users: data });
+ initUsers: () => {
+  const data = localStorage.getItem("users");
+  if (data) {
+   set({ users: JSON.parse(data) });
+  }
  },
 
- addUser: async (user) => {
-  await fetch("/api/users", {
-   method: "POST",
-   headers: { "Content-Type": "application/json" },
-   body: JSON.stringify(user),
-  });
+ addUser: (user) =>
+  set((state) => {
+   const newUsers = [...state.users, user];
+   saveStorage("users", newUsers);
+   return { users: newUsers };
+  }),
 
-  await get().initUsers();
- },
+ removeUser: (id) =>
+  set((state) => {
+   const newUsers = state.users.filter((user) => user.id !== id);
+   saveStorage("users", newUsers);
+   return { users: newUsers };
+  }),
 
- removeUser: async (id) => {
-  await fetch("/api/users", {
-   method: "DELETE",
-   headers: { "Content-Type": "application/json" },
-   body: JSON.stringify({ id }),
-  });
-
-  await get().initUsers();
- },
-
- updateUser: async (id, newData) => {
-  await fetch("/api/users", {
-   method: "PATCH",
-   headers: { "Content-Type": "application/json" },
-   body: JSON.stringify({ id, ...newData }),
-  });
-
-  await get().initUsers();
- },
+ updateUser: (id, newData) =>
+  set((state) => {
+   const newUsers = state.users.map((u) => u.id === id ? { ...u, ...newData } : u
+   );
+   saveStorage("users", newUsers);
+   return { users: newUsers };
+  }),
 }));
 
 export default useStore;
+

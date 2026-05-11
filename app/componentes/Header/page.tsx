@@ -45,7 +45,6 @@ export default function Header() {
       </Link>
      ))}
 
-     {/* Dropdown Menu */}
      <div
       className="relative group h-full py-2"
       onMouseEnter={() => setList(true)}
@@ -74,7 +73,6 @@ export default function Header() {
      </div>
     </nav>
 
-    {/* Right Menu */}
     <div className="flex items-center gap-2 md:gap-4 ml-auto md:ml-0">
      <div className="flex items-center">
       <Icons />

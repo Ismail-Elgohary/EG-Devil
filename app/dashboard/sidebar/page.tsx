@@ -10,6 +10,7 @@ export default function SideBar() {
   { name: "Analytics", href: "/dashboard" }
  ];
  const manageLinks: LinkItem[] = [
+  { name: "Users", href: "/dashboard/users" },
   { name: "Products", href: "/dashboard/products" },
   { name: "Orders", href: "/dashboard/orders" },
  ];

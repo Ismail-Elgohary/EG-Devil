@@ -1,232 +1,119 @@
-"use client";
-import { Check, Pencil, Trash2, X } from "lucide-react";
-import { useEffect, useState } from "react";
-import useProductStore, { Product } from "../store/products";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductsPage() {
- const products = useProductStore((state) => state.products);
- const addProduct = useProductStore((state) => state.addProduct);
- const removeProduct = useProductStore((state) => state.removeProduct);
- const updateProduct = useProductStore((state) => state.updateProduct);
- const initProducts = useProductStore((s) => s.initProducts);
-
- const [editingId, setEditingId] = useState<string | null>(null);
- const [form, setForm] = useState<Partial<Product>>({});
- const [showAddModal, setShowAddModal] = useState(false);
- const [newProduct, setNewProduct] = useState<Omit<Product, "id">>({
-  name: "",
-  price: 0,
-  category: "",
-  stock: 0,
-  status: "Active",
- });
-
- useEffect(() => {
-  initProducts();
- }, []);
-
- const handleDelete = (id: string) => {
-  removeProduct(id);
- };
-
- const handleEdit = (product: Product) => {
-  setEditingId(product.id);
-  setForm(product);
- };
-
- const handleSaveEdit = () => {
-  if (!editingId) return;
-  updateProduct(editingId, form);
-  setEditingId(null);
-  setForm({});
- };
-
- const handleAdd = () => {
-  if (!newProduct.name || !newProduct.category) return;
-  addProduct(newProduct);
-  setNewProduct({ name: "", price: 0, category: "", stock: 0, status: "Active" });
-  setShowAddModal(false);
- };
-
+ const products = [
+  {
+   "id": "1",
+   "title": "Men's T-Shirt",
+   "price": 100.99,
+   "description": "Under Armour Men's Tech 2.0 Short-Sleeve T-Shirt",
+   "category": "t-shirt",
+   "image": "https://m.media-amazon.com/images/I/81cX5SrwD8L._AC_UL480_QL65_.jpg",
+   "rating": { "rate": 1.9, "count": 100 }
+  },
+  {
+   "id": "2",
+   "title": "Men's Hoodie",
+   "price": 2100,
+   "description": "Nike Boy's NSW Pull Over Hoodie Club",
+   "category": "Hodies",
+   "image": "https://m.media-amazon.com/images/I/71zdwdDgt-L._AC_UL480_QL65_.jpg",
+   "rating": { "rate": 2.9, "count": 470 }
+  },
+  {
+   "id": "3",
+   "title": "Men's Hoodie",
+   "price": 1700,
+   "description": "SOLY HUX Boy's Zip Up Hoodies Sweatshirt Y2k Letter Graphic Long Sleeve Streetwear Jacket",
+   "category": "Hody",
+   "image": "https://m.media-amazon.com/images/I/61291tTiTpL._AC_SY500_.jpg",
+   "rating": { "rate": 4.8, "count": 319 }
+  },
+  {
+   "id": "4",
+   "title": "Men's Hoodie",
+   "price": 1317,
+   "description": "wangstar Graphic Hoodies for Boys Sweatshirts Baseball Gifts for Teen Boys Fashion Hoodies Size 14-16 Cool Football Stuff",
+   "category": "hody",
+   "image": "https://m.media-amazon.com/images/I/61qRavw1nDL._AC_SY500_.jpg",
+   "rating": { "rate": 4.8, "count": 400 }
+  },
+  {
+   "id": "5",
+   "title": "Men's Hoodie",
+   "price": 1299,
+   "description": "wangstar Graphic Hoodies for Boys Sweatshirts Baseball Gifts for Teen Boys Fashion Hoodies Size 14-16 Cool Football Stuff",
+   "category": "hody",
+   "image": "https://m.media-amazon.com/images/I/61zDhh8th3L._AC_SY500_.jpg",
+   "rating": { "rate": 2.9, "count": 250 }
+  },
+  {
+   "id": "6",
+   "title": "Men's Jacket",
+   "price": 1700,
+   "description": "TACVASEN Men's Bomber Jacket Lightweight Casual Spring Fall Windbreaker Zip Up Coat with Pocket",
+   "category": "jacket",
+   "image": "https://m.media-amazon.com/images/I/71rNJdgvB1L._AC_SX569_.jpg",
+   "rating": { "rate": 2.2, "count": 140 }
+  },
+ ];
  return (
-  <div className="p-6">
-   <div className="flex items-center justify-between mb-4">
-    <h1 className="text-3xl font-bold text-gray-800">Products</h1>
-    <button
-     onClick={() => setShowAddModal(true)}
-     className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg transition"
-    >
-     Add Product
-    </button>
+  <div className="min-h-screen bg-[#0F172A] text-white px-4 py-8 md:px-8">
+   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5 mb-10">
+    <div>
+     <h1 className="text-4xl font-bold tracking-tight">
+      Our Products
+     </h1>
+
+     <p className="text-slate-400 mt-2 text-sm md:text-base">
+      Discover the latest fashion and trending products.
+     </p>
+    </div>
    </div>
 
-   <div className="overflow-x-auto rounded-xl shadow-xl">
-    <table className="w-full text-lg font-bold text-left">
-     <thead className="bg-gray-800 text-yellow-400">
-      <tr>
-       <th className="px-4 py-3">id</th>
-       <th className="px-4 py-3">Name</th>
-       <th className="px-4 py-3">Price</th>
-       <th className="px-4 py-3">Category</th>
-       <th className="px-4 py-3">Stock</th>
-       <th className="px-4 py-3">Status</th>
-       <th className="px-4 py-3">Actions</th>
-      </tr>
-     </thead>
-     <tbody>
-      {products.map((product) => (
-       <tr
-        key={product.id}
-        className="border-b border-gray-100 hover:bg-gray-50 transition"
-       >
-        <td className="px-4 py-3 text-gray-500">{product.id}</td>
-
-        {editingId === product.id ? (
-         <>
-          <td className="px-4 py-3">
-           <input
-            className="border rounded px-2 py-1 w-full"
-            value={form.name || ""}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-           />
-          </td>
-          <td className="px-4 py-3">
-           <input
-            type="number"
-            className="border rounded px-2 py-1 w-full"
-            value={form.price || 0}
-            onChange={(e) => setForm({ ...form, price: Number(e.target.value) })}
-           />
-          </td>
-          <td className="px-4 py-3">
-           <input
-            className="border rounded px-2 py-1 w-full"
-            value={form.category || ""}
-            onChange={(e) => setForm({ ...form, category: e.target.value })}
-           />
-          </td>
-          <td className="px-4 py-3">
-           <input
-            type="number"
-            className="border rounded px-2 py-1 w-full"
-            value={form.stock || 0}
-            onChange={(e) => setForm({ ...form, stock: Number(e.target.value) })}
-           />
-          </td>
-          <td className="px-4 py-3">
-           <select
-            className="border rounded px-2 py-1"
-            value={form.status || "Active"}
-            onChange={(e) =>
-             setForm({ ...form, status: e.target.value as Product["status"] })
-            }
-           >
-            <option>Active</option>
-            <option>Inactive</option>
-           </select>
-          </td>
-          <td className="px-4 py-3 flex gap-2">
-           <button onClick={handleSaveEdit} className="text-green-500">
-            <Check className="w-6 h-6" />
-           </button>
-           <button onClick={() => setEditingId(null)} className="text-gray-400">
-            <X className="w-6 h-6" />
-           </button>
-          </td>
-         </>
-        ) : (
-         <>
-          <td className="px-4 py-3 font-medium text-gray-800">{product.name}</td>
-          <td className="px-4 py-3 text-gray-600">${product.price.toFixed(2)}</td>
-          <td className="px-4 py-3 text-gray-600">{product.category}</td>
-          <td className="px-4 py-3 text-gray-600">{product.stock}</td>
-          <td className="px-4 py-3">
-           <span
-            className={`px-2 py-1 rounded-full text-xs font-semibold ${product.status === "Active"
-             ? "bg-green-100 text-green-700"
-             : "bg-red-100 text-red-500"
-             }`}
-           >
-            {product.status}
-           </span>
-          </td>
-          <td className="px-4 py-3">
-           <div className="flex gap-2">
-            <button onClick={() => handleEdit(product)} className="text-blue-400">
-             <Pencil className="w-6 h-6" />
-            </button>
-            <button onClick={() => handleDelete(product.id)} className="text-red-400">
-             <Trash2 className="w-6 h-6" />
-            </button>
-           </div>
-          </td>
-         </>
-        )}
-       </tr>
-      ))}
-     </tbody>
-    </table>
-   </div>
-
-   {showAddModal && (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-     <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md">
-      <div className="flex items-center justify-between mb-4">
-       <h2 className="text-xl font-bold text-gray-800">Add Product</h2>
-       <button
-        onClick={() => setShowAddModal(false)}
-        className="text-gray-400 hover:text-gray-600"
-       >
-        <X className="w-6 h-6" />
-       </button>
+   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    {products.map((product) => (
+     <div
+      key={product.id}
+      className="group bg-[#1E293B] rounded-3xl overflow-hidden border border-slate-800 hover:border-indigo-500/50 transition-all duration-300 shadow-lg"
+     >
+      <div className="relative h-[320px] overflow-hidden">
+       <Image
+        src={product.image}
+        alt={product.title}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-500"
+       />
       </div>
-      <div className="flex flex-col gap-3">
-       <input
-        placeholder="Product Name"
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
-        value={newProduct.name}
-        onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
-       />
-       <input
-        type="number"
-        placeholder="Price"
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
-        value={newProduct.price || ""}
-        onChange={(e) => setNewProduct({ ...newProduct, price: Number(e.target.value) })}
-       />
-       <input
-        placeholder="Category"
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
-        value={newProduct.category}
-        onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })}
-       />
-       <input
-        type="number"
-        placeholder="Stock"
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
-        value={newProduct.stock || ""}
-        onChange={(e) => setNewProduct({ ...newProduct, stock: Number(e.target.value) })}
-       />
-       <select
-        className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-yellow-400"
-        value={newProduct.status}
-        onChange={(e) =>
-         setNewProduct({ ...newProduct, status: e.target.value as Product["status"] })
-        }
-       >
-        <option>Active</option>
-        <option>Inactive</option>
-       </select>
-       <button
-        onClick={handleAdd}
-        className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 rounded-lg transition"
-       >
-        Add Product
-       </button>
+
+      <div className="p-5">
+       <div className="flex items-center justify-between mb-3">
+        <span className="text-xs bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full">
+         {product.category}
+        </span>
+       </div>
+
+       <h2 className="text-xl font-semibold mb-2 line-clamp-1">
+        {product.title}
+       </h2>
+
+       <div className="flex items-center justify-between mt-5">
+        <p className="text-2xl font-bold text-indigo-400">
+         ${product.price}
+        </p>
+
+        <Link
+         href={`/products/${product.id}`}
+         className="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-xl text-sm font-medium transition"
+        >
+         View
+        </Link>
+       </div>
       </div>
      </div>
-    </div>
-   )}
+    ))}
+   </div>
   </div>
  );
 }

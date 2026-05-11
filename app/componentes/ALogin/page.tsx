@@ -41,7 +41,7 @@ export default function ALoginPage() {
     ) : (
      <UserRound
       size={20}
-      className="text-gray-400 hover:text-indigo-400 transition"
+      className="text-white group-hover:text-rose-500 transition"
      />
     )}
    </button>

@@ -99,12 +99,8 @@ export const authOptions: NextAuthOptions = {
    return session;
   },
 
-  async redirect({ baseUrl, token }) {
-   if (token?.role === "admin") {
-    return baseUrl + "/dashboard";
-   }
-
-   return baseUrl + "/";
+  async redirect({ baseUrl }) {
+   return baseUrl;
   },
  },
 

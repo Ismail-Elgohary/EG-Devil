@@ -1,4 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
@@ -21,6 +20,3 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 ## Deploy on Netlify
 
 ##  This is Link
-
-https://eg-devil1.netlify.app/
-

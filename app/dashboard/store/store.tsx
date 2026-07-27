@@ -60,4 +60,3 @@ const useStore = create<Store>((set) => ({
 }));
 
 export default useStore;
-
